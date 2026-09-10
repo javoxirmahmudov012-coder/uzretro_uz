@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+{% block title %}Narxlar — UzRetro.uz{% endblock %}
+
+{% block content %}
+<div class="page-header py-5 mt-5">
+    <div class="container text-center">
+        <h1 class="text-white fw-bold">O'ZINGIZGA MOS TARIFNI TANLANG</h1>
+        <p class="text-muted mt-2">Vaqt o'tishi bilan video kassetalar o'z sifatini yo'qotadi.<br>
+        Eng qadrli damlaringizni yaroqsiz holga kelmasidan oldin, ularni bugunoq saqlab qoling.</p>
+    </div>
+</div>
+
+<section class="section-dark py-6">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+
+            <!-- START -->
+            <div class="col-md-6 col-lg-3">
+                <div class="price-card h-100">
+                    <div class="price-header">
+                        <h4 class="price-name">Start</h4>
+                        <div class="price-amount">$20</div>
+                        <div class="price-period">Bir martalik to'lov</div>
+                    </div>
+                    <div class="price-body">
+                        <p class="price-section-label">Tarifi ichiga nimalar kiradi:</p>
+                        <ul class="price-features">
+                            <li>
+                                <span class="check">✓</span>
+                                Video kassetadan fleshka, Hard diskka ko'chirib berish
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                Fleshka, Hard yoki disk — mijoz tomonidan beriladi
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price-footer">
+                        <a href="{{ url_for('main.order') }}?tarif=start" class="btn btn-price w-100">
+                            Tarifni tanlash
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STANDART -->
+            <div class="col-md-6 col-lg-3">
+                <div class="price-card price-popular h-100">
+                    <div class="price-header">
+                        <h4 class="price-name">Standart</h4>
+                        <div class="price-amount">$30</div>
+                        <div class="price-period">Bir martalik to'lov</div>
+                    </div>
+                    <div class="price-body">
+                        <p class="price-section-label">Tarifi ichiga nimalar kiradi:</p>
+                        <ul class="price-features">
+                            <li>
+                                <span class="check">✓</span>
+                                Video kasseta avval tozalanadi (sifat yaxshilash, rang tiklash, yorqinlik to'g'rilash, ovoz tozalash)
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                Video kassetadan fleshka, Hard diskka ko'chirib berish
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                8 GB fleshkaga BONUS qilib yozib beriladi
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                <strong>Tayyor bo'lgach orqaga yetkazib berish</strong> (Yandex, BTS...)
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price-footer">
+                        <a href="{{ url_for('main.order') }}?tarif=standart" class="btn btn-price w-100">
+                            Tarifni tanlash
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRO -->
+            <div class="col-md-6 col-lg-3">
+                <div class="price-card price-pro h-100">
+                    <div class="price-badge">Mashhur</div>
+                    <div class="price-header">
+                        <h4 class="price-name">PRO</h4>
+                        <div class="price-amount">$50</div>
+                        <div class="price-period">Bir martalik to'lov</div>
+                    </div>
+                    <div class="price-body">
+                        <p class="price-section-label">Tarifi ichiga nimalar kiradi:</p>
+                        <ul class="price-features">
+                            <li>
+                                <span class="check">✓</span>
+                                Video kasseta avval tozalanadi (sifat yaxshilash, rang tiklash, yorqinlik to'g'rilash, ovoz tozalash)
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                Video kassetadan fleshka, Hard diskka ko'chirib berish
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                8 GB fleshkaga yozib beriladi
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                QR code beriladi
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                Shaxsiy yopiq YouTube link (istalgan vaqtda, istalgan joydan, istalgan qurilmadan ko'rish imkoniyati)
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                <strong>Yetkazib berish xarajati to'liq o'zimizdan</strong> (Yandex yoki BTS orqali)
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price-footer">
+                        <a href="{{ url_for('main.order') }}?tarif=pro" class="btn btn-price-pro w-100">
+                            Tarifni tanlash
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIP -->
+            <div class="col-md-6 col-lg-3">
+                <div class="price-card price-vip h-100">
+                    <div class="price-badge vip-badge">VIP</div>
+                    <div class="price-header">
+                        <h4 class="price-name">VIP</h4>
+                        <div class="price-amount price-gold">$100</div>
+                        <div class="price-period">Bir martalik to'lov</div>
+                    </div>
+                    <div class="price-body">
+                        <p class="price-section-label">Tarifi ichiga nimalar kiradi:</p>
+                        <ul class="price-features">
+                            <li>
+                                <span class="check gold">✓</span>
+                                Video kasseta avval tozalanadi (sifat yaxshilash, rang tiklash, yorqinlik to'g'rilash, ovoz tozalash)
+                            </li>
+                            <li>
+                                <span class="check gold">✓</span>
+                                Video kassetadan fleshka, Hard diskka ko'chirib berish
+                            </li>
+                            <li>
+                                <span class="check gold">✓</span>
+                                16 GB fleshkaga yozib beriladi
+                            </li>
+                            <li>
+                                <span class="check gold">✓</span>
+                                QR code beriladi
+                            </li>
+                            <li>
+                                <span class="check gold">✓</span>
+                                Shaxsiy yopiq YouTube link (istalgan vaqtda, istalgan joydan, istalgan qurilmadan ko'rish)
+                            </li>
+                            <li>
+                                <span class="check gold">✓</span>
+                                Duolar, tabriklar, qadrli insonlar nutqi alohida rolik qilinadi (qarindoshlar guruhi uchun 2-3 daqiqalik maxsus video)
+                            </li>
+                            <li>
+                                <span class="check gold">✓</span>
+                                <strong>Yetkazib berish xarajati to'liq o'zimizdan</strong> (Yandex yoki BTS orqali)
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price-footer">
+                        <a href="{{ url_for('main.order') }}?tarif=vip" class="btn btn-price-vip w-100">
+                            Tarifni tanlash
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Qo'shimcha eslatma -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="price-note text-center">
+                    <i class="bi bi-info-circle text-primary"></i>
+                    Narxlar <strong>har bir kasseta uchun</strong> belgilangan.
+                    Ko'p kasseta bo'lsa — chegirma imkoniyati mavjud.
+                    Batafsil: <a href="https://t.me/uzretrouz" class="text-primary">@uzretrouz</a>
+                    yoki <a href="tel:+998877700233" class="text-primary">+998 87 770 02 33</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.price-card {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative;
+}
+.price-card:hover { transform: translateY(-8px); border-color: #444; }
+
+.price-header {
+    background: #1a1a2e;
+    padding: 30px 24px 24px;
+    text-align: center;
+    border-bottom: 1px solid #2a2a2a;
+}
+.price-name { color: #fff; font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
+.price-amount { font-size: 3rem; font-weight: 800; color: #007bff; line-height: 1; }
+.price-gold { color: #f0a500 !important; }
+.price-period { color: #666; font-size: 0.8rem; margin-top: 6px; }
+
+.price-body { padding: 24px; flex: 1; }
+.price-section-label { color: #888; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.price-features { list-style: none; padding: 0; margin: 0; }
+.price-features li {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #1f1f1f;
+    color: #ccc;
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+.price-features li:last-child { border-bottom: none; }
+.check { color: #007bff; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+.check.gold { color: #f0a500; }
+
+.price-footer { padding: 24px; padding-top: 0; }
+
+.btn-price {
+    background: #1a1a3e;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 12px;
+    padding: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.btn-price:hover { background: #007bff; color: #fff; }
+
+.btn-price-pro {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+.btn-price-pro:hover { background: linear-gradient(135deg, #0088ff, #0066cc); color: #fff; transform: translateY(-2px); }
+
+.btn-price-vip {
+    background: linear-gradient(135deg, #f0a500, #c17f00);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-weight: 800;
+    transition: all 0.3s;
+}
+.btn-price-vip:hover { background: linear-gradient(135deg, #ffb800, #d48a00); color: #000; transform: translateY(-2px); }
+
+/* Mashhur badge */
+.price-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #007bff;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.vip-badge { background: linear-gradient(135deg, #f0a500, #c17f00); color: #000; }
+
+/* PRO card highlight */
+.price-pro { border-color: rgba(0, 123, 255, 0.5); }
+.price-pro .price-header { background: linear-gradient(135deg, #0a1628, #001f4d); }
+
+/* VIP card */
+.price-vip { border-color: rgba(240, 165, 0, 0.4); }
+.price-vip .price-header { background: linear-gradient(135deg, #1a1400, #2a1f00); }
+
+.price-note {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+    color: #888;
+}
+</style>
+{% endblock %}

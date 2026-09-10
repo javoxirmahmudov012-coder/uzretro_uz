@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}UzRetro.uz — Eski xotiralaringizni qayta tiklang{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-8 col-xl-7">
+                <div class="hero-content" data-aos="fade-up">
+                    <div class="hero-badge mb-3">
+                        <span class="badge bg-primary px-3 py-2">
+                            <i class="bi bi-stars"></i> 32,000+ doimiy mijoz
+                        </span>
+                    </div>
+                    <h1 class="hero-title">
+                        OTA-ONANGIZ YOSHLIK XOTIRALARINI
+                        <span class="text-gradient">QAYTA JONLANTIRING</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        VHS kasseta, betamax, 8mm filmlaringizni fleshka, hard disk yoki cloudga o'tkazamiz.
+                        Xotiralaringiz abadiy saqlansin!
+                    </p>
+                    <div class="hero-actions">
+                        <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg btn-glow me-3">
+                            <i class="bi bi-cart-plus"></i> Hozir buyurtma bering
+                        </a>
+                        <a href="{{ url_for('main.services') }}" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-info-circle"></i> Xizmatlar
+                        </a>
+                    </div>
+                    <div class="hero-stats mt-4">
+                        <div class="row g-3">
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <span class="stat-num">32K+</span>
+                                    <span class="stat-label">Ijtimoiy tarmoq</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <span class="stat-num">5000+</span>
+                                    <span class="stat-label">Bajarilgan ish</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <span class="stat-num">100%</span>
+                                    <span class="stat-label">Sifat kafolati</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+        <i class="bi bi-chevron-double-down"></i>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="section-dark py-6">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">Bizning xizmatlar</span>
+            <h2 class="section-title">Nima qilamiz?</h2>
+            <p class="section-subtitle">Premium sifatda, tez va ishonchli</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- VHS → Fleshka -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-usb-drive"></i>
+                    </div>
+                    <h5>VHS → Fleshka</h5>
+                    <p>Kasseta videolaringizni USB fleshkaga yuqori sifatda yozamiz</p>
+                    <div class="service-badge">Eng mashhur</div>
+                </div>
+            </div>
+            
+            <!-- VHS → Cloud -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-cloud-upload"></i>
+                    </div>
+                    <h5>VHS → Cloud</h5>
+                    <p>Videolaringizni Google Drive yoki boshqa bulut xizmatiga yuklaymiz</p>
+                    <div class="service-badge popular">Yangi!</div>
+                </div>
+            </div>
+            
+            <!-- VHS → Hard Disk -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-hdd"></i>
+                    </div>
+                    <h5>VHS → Hard Disk</h5>
+                    <p>Ko'p kasseta bo'lsa — hard diskka to'liq arxivlaymiz</p>
+                </div>
+            </div>
+            
+            <!-- Foto Skanerlash -->
+            <div class="col-md-6 col-lg-3">
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <h5>Foto skanerlash</h5>
+                    <p>Eski fotosuratingizni yuqori aniqlikda raqamlashtirish</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{{ url_for('main.services') }}" class="btn btn-outline-primary btn-lg">
+                Barcha xizmatlar <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="section-darker py-6">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">Jarayon</span>
+            <h2 class="section-title">Qanday ishlaydi?</h2>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3 text-center">
+                <div class="step-circle">1</div>
+                <h6 class="text-white mt-3">Buyurtma bering</h6>
+                <p class="text-muted small">Saytdan yoki Telegram orqali</p>
+            </div>
+            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-arrow-right text-primary h3"></i>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="step-circle">2</div>
+                <h6 class="text-white mt-3">Kasseta topshiring</h6>
+                <p class="text-muted small">Manzilimizga keling yoki kuryerga bering</p>
+            </div>
+            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-arrow-right text-primary h3"></i>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="step-circle">3</div>
+                <h6 class="text-white mt-3">Videoni oling</h6>
+                <p class="text-muted small">1-2 kun ichida tayyor qilinadi</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section-dark py-6">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">Mijozlar fikri</span>
+            <h2 class="section-title">Ular nima deydi?</h2>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="review-card">
+                    <div class="stars mb-2">⭐⭐⭐⭐⭐</div>
+                    <p>"Otamning 1985-yilgi to'y videosini topa oldik! Juda rahmat, sifat ajoyib edi!"</p>
+                    <strong class="text-primary">— Zulfiya X.</strong>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="review-card">
+                    <div class="stars mb-2">⭐⭐⭐⭐⭐</div>
+                    <p>"Tez, sifatli va narxi ham qulay. 20 ta kassetani 2 kunda tayyor qilishdi!"</p>
+                    <strong class="text-primary">— Behruz T.</strong>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="review-card">
+                    <div class="stars mb-2">⭐⭐⭐⭐⭐</div>
+                    <p>"Bolachog'imiz suratlari bor edi, hammasi raqamlashtirilib berildi. Tavsiya qilaman!"</p>
+                    <strong class="text-primary">— Malika S.</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-6">
+    <div class="container text-center">
+        <h2 class="text-white mb-3">Xotiralaringizni saqlab qolish vaqti keldi!</h2>
+        <p class="text-light mb-4">Eski kasseta va fotolaringiz eskirib ketmasdan oldin raqamlashtiring</p>
+        <a href="{{ url_for('main.order') }}" class="btn btn-light btn-lg px-5">
+            <i class="bi bi-cart-plus"></i> Bepul maslahat olish
+        </a>
+    </div>
+</section>
+
+{% endblock %}

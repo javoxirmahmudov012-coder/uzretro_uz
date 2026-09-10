@@ -1,0 +1,111 @@
+{% extends "admin/base_admin.html" %}
+{% block title %}Dashboard — Admin{% endblock %}
+
+{% block admin_content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="text-white mb-0">📊 Dashboard</h4>
+    <small class="text-muted">So'ngi yangilanish: hozir</small>
+</div>
+
+<!-- Statistika kartalar -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p class="text-muted mb-1 small">Jami buyurtmalar</p>
+                        <h3 class="text-white">{{ stats.total }}</h3>
+                    </div>
+                    <i class="bi bi-list-check text-primary h2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card" style="border-left: 4px solid #ffc107;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p class="text-muted mb-1 small">🆕 Yangi</p>
+                        <h3 class="text-warning">{{ stats.new }}</h3>
+                    </div>
+                    <i class="bi bi-bell text-warning h2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card" style="border-left: 4px solid #28a745;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p class="text-muted mb-1 small">Bugun</p>
+                        <h3 class="text-success">{{ stats.today }}</h3>
+                    </div>
+                    <i class="bi bi-calendar-day text-success h2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card" style="border-left: 4px solid #17a2b8;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p class="text-muted mb-1 small">Bu hafta</p>
+                        <h3 class="text-info">{{ stats.this_week }}</h3>
+                    </div>
+                    <i class="bi bi-calendar-week text-info h2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- So'ngi buyurtmalar -->
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h6 class="mb-0">🕐 So'ngi buyurtmalar</h6>
+        <a href="{{ url_for('admin.orders') }}" class="btn btn-sm btn-outline-primary">Barchasi</a>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Mijoz</th>
+                        <th>Telefon</th>
+                        <th>Xizmat</th>
+                        <th>Holat</th>
+                        <th>Sana</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in recent_orders %}
+                    {% set badge_text, badge_color = order.status_badge() %}
+                    <tr>
+                        <td><strong>#{{ order.id }}</strong></td>
+                        <td>{{ order.customer_name }}</td>
+                        <td>{{ order.customer_phone }}</td>
+                        <td>{{ order.service_name() }}</td>
+                        <td><span class="badge bg-{{ badge_color }}">{{ badge_text }}</span></td>
+                        <td>{{ order.created_at.strftime('%d.%m %H:%M') }}</td>
+                        <td>
+                            <a href="{{ url_for('admin.order_detail', order_id=order.id) }}" 
+                               class="btn btn-sm btn-outline-light">Ko'rish</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="7" class="text-center text-muted py-4">Hali buyurtmalar yo'q</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "admin/base_admin.html" %}
+{% block title %}Buyurtma #{{ order.id }} — Admin{% endblock %}
+
+{% block admin_content %}
+{% set badge_text, badge_color = order.status_badge() %}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <a href="{{ url_for('admin.orders') }}" class="btn btn-outline-secondary btn-sm">← Orqaga</a>
+    <h4 class="text-white mb-0">Buyurtma #{{ order.id }}</h4>
+    <span class="badge bg-{{ badge_color }}">{{ badge_text }}</span>
+</div>
+
+<div class="row g-4">
+    <!-- Mijoz ma'lumotlari -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header"><h6 class="mb-0">👤 Mijoz ma'lumotlari</h6></div>
+            <div class="card-body">
+                <table class="table table-dark mb-0">
+                    <tr><td class="text-muted">Ism</td><td class="text-white">{{ order.customer_name }}</td></tr>
+                    <tr><td class="text-muted">Telefon</td><td>
+                        <a href="tel:{{ order.customer_phone }}" class="text-info">{{ order.customer_phone }}</a>
+                    </td></tr>
+                    <tr><td class="text-muted">Email</td><td>{{ order.customer_email or '—' }}</td></tr>
+                    <tr><td class="text-muted">Xizmat</td><td class="text-white">{{ order.service_name() }}</td></tr>
+                    <tr><td class="text-muted">Miqdor</td><td class="text-white">{{ order.quantity }} ta</td></tr>
+                    <tr><td class="text-muted">Izoh</td><td>{{ order.description or '—' }}</td></tr>
+                    <tr><td class="text-muted">Sana</td><td>{{ order.created_at.strftime('%d.%m.%Y %H:%M') }}</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Holat va narx -->
+    <div class="col-md-6">
+        <!-- Holatni yangilash -->
+        <div class="card mb-3">
+            <div class="card-header"><h6 class="mb-0">🔄 Holatni yangilash</h6></div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('admin.update_status', order_id=order.id) }}">
+                    <div class="mb-3">
+                        <select name="status" class="form-select bg-dark text-white border-secondary">
+                            <option value="new" {% if order.status=='new' %}selected{% endif %}>🆕 Yangi</option>
+                            <option value="accepted" {% if order.status=='accepted' %}selected{% endif %}>✅ Qabul qilindi</option>
+                            <option value="processing" {% if order.status=='processing' %}selected{% endif %}>⚙️ Jarayonda</option>
+                            <option value="ready" {% if order.status=='ready' %}selected{% endif %}>🎉 Tayyor</option>
+                            <option value="delivered" {% if order.status=='delivered' %}selected{% endif %}>📦 Topshirildi</option>
+                            <option value="cancelled" {% if order.status=='cancelled' %}selected{% endif %}>❌ Bekor</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Saqlash</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Narx belgilash -->
+        <div class="card">
+            <div class="card-header"><h6 class="mb-0">💰 Narx belgilash</h6></div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('admin.set_price', order_id=order.id) }}">
+                    <div class="mb-3">
+                        <label class="text-muted small">Narx (so'm)</label>
+                        <input type="number" name="price" class="form-control bg-dark text-white border-secondary"
+                               value="{{ order.price or '' }}" placeholder="Masalan: 50000">
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" name="is_paid" class="form-check-input" id="isPaid"
+                               {% if order.is_paid %}checked{% endif %}>
+                        <label class="form-check-label text-white" for="isPaid">To'langan ✓</label>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Narxni saqlash</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

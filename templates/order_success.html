@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Buyurtma qabul qilindi — UzRetro.uz{% endblock %}
+
+{% block content %}
+<div class="section-dark min-vh-100 d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 text-center">
+                <div class="success-card">
+                    <div class="success-icon">🎉</div>
+                    <h2 class="text-white mb-3">Buyurtmangiz qabul qilindi!</h2>
+                    <p class="text-muted mb-4">
+                        Hurmatli <strong class="text-white">{{ order.customer_name }}</strong>, 
+                        buyurtmangiz muvaffaqiyatli yuborildi!
+                    </p>
+                    
+                    <div class="order-info-box mb-4">
+                        <div class="row text-start">
+                            <div class="col-6 mb-2">
+                                <small class="text-muted">Buyurtma raqami</small>
+                                <div class="text-white fw-bold">#{{ order.id }}</div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <small class="text-muted">Xizmat</small>
+                                <div class="text-white">{{ order.service_name() }}</div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <small class="text-muted">Holat</small>
+                                <div>
+                                    {% set badge_text, badge_color = order.status_badge() %}
+                                    <span class="badge bg-{{ badge_color }}">{{ badge_text }}</span>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <small class="text-muted">Kasseta soni</small>
+                                <div class="text-white">{{ order.quantity }} ta</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-muted mb-4">
+                        <i class="bi bi-telephone-fill text-success"></i>
+                        Biz <strong class="text-white">15 daqiqa</strong> ichida 
+                        <strong class="text-white">{{ order.customer_phone }}</strong> ga qo'ng'iroq qilamiz!
+                    </p>
+                    
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="{{ url_for('main.index') }}" class="btn btn-outline-light">
+                            <i class="bi bi-house"></i> Bosh sahifaga
+                        </a>
+                        <a href="https://t.me/uzretrouz" class="btn btn-primary">
+                            <i class="bi bi-telegram"></i> Telegram orqali aloqa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

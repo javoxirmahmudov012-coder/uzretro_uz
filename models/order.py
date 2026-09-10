@@ -1,0 +1,58 @@
+from extensions import db
+from datetime import datetime
+
+class Order(db.Model):
+    __tablename__ = 'orders'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    
+    # Mijoz ma'lumotlari
+    customer_name = db.Column(db.String(100), nullable=False)
+    customer_phone = db.Column(db.String(20), nullable=False)
+    customer_email = db.Column(db.String(120), nullable=True)
+    
+    # Xizmat ma'lumotlari
+    service_type = db.Column(db.String(50), nullable=False)  
+    # vhs_to_flash, vhs_to_cloud, vhs_to_harddisk, harddisk_backup
+    
+    quantity = db.Column(db.Integer, default=1)
+    description = db.Column(db.Text, nullable=True)
+    
+    # Holat
+    status = db.Column(db.String(30), default='new')
+    # new, accepted, processing, ready, delivered, cancelled
+    
+    # Narx
+    price = db.Column(db.Float, nullable=True)
+    is_paid = db.Column(db.Boolean, default=False)
+    
+    # Vaqt
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Telegram xabar yuborildi?
+    telegram_notified = db.Column(db.Boolean, default=False)
+    
+    def status_badge(self):
+        badges = {
+            'new': ('🆕 Yangi', 'primary'),
+            'accepted': ('✅ Qabul qilindi', 'info'),
+            'processing': ('⚙️ Jarayonda', 'warning'),
+            'ready': ('🎉 Tayyor', 'success'),
+            'delivered': ('📦 Topshirildi', 'secondary'),
+            'cancelled': ('❌ Bekor', 'danger'),
+        }
+        return badges.get(self.status, ('❓ Noma\'lum', 'secondary'))
+    
+    def service_name(self):
+        names = {
+            'vhs_to_flash': '📼 VHS → Fleshka',
+            'vhs_to_cloud': '☁️ VHS → Cloud',
+            'vhs_to_harddisk': '💾 VHS → Hard disk',
+            'harddisk_backup': '🗄️ Hard disk nusxa',
+            'photo_scan': '📷 Foto skanerlash',
+        }
+        return names.get(self.service_type, self.service_type)
+    
+    def __repr__(self):
+        return f'<Order #{self.id} - {self.customer_name}>'

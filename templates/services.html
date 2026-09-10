@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+{% block title %}Xizmatlar — UzRetro.uz{% endblock %}
+
+{% block content %}
+<div class="page-header py-5 mt-5">
+    <div class="container text-center">
+        <span class="section-badge">Premium sifat</span>
+        <h1 class="text-white mt-2">Bizning Xizmatlar</h1>
+        <p class="text-muted">VHS dan cloudgacha — hamma xizmat bir joyda</p>
+    </div>
+</div>
+
+<section class="section-dark py-6">
+    <div class="container">
+        
+        <!-- VHS → Fleshka -->
+        <div class="row align-items-center mb-6">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="service-detail-icon">
+                    <i class="bi bi-usb-drive"></i>
+                </div>
+                <h2 class="text-white">VHS → Fleshka</h2>
+                <p class="text-muted">
+                    Eng mashhur xizmatimiz. VHS, S-VHS, Betamax kasseta videolaringizni
+                    USB flash diskka yuqori sifatda raqamlashtiramiz.
+                </p>
+                <ul class="service-features">
+                    <li><i class="bi bi-check-circle text-success"></i> Full HD sifatda yozish</li>
+                    <li><i class="bi bi-check-circle text-success"></i> MP4 formatda</li>
+                    <li><i class="bi bi-check-circle text-success"></i> 1-2 kun ichida</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Fleshkangizga yoki biznikiga</li>
+                </ul>
+                <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg mt-3">
+                    Buyurtma berish <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="service-visual">
+                    <div class="service-visual-icon">📼 → 💾</div>
+                    <p class="text-muted">VHS kasseta → USB Fleshka</p>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="border-secondary my-5">
+        
+        <!-- VHS → Cloud -->
+        <div class="row align-items-center mb-6 flex-lg-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="service-detail-icon" style="color: #17a2b8;">
+                    <i class="bi bi-cloud-upload"></i>
+                </div>
+                <h2 class="text-white">VHS → Cloud</h2>
+                <p class="text-muted">
+                    Videolaringizni Google Drive, Yandex Disk yoki boshqa bulut xizmatiga
+                    yuklaymiz. Internet orqali istalgan joydan ko'ring!
+                </p>
+                <ul class="service-features">
+                    <li><i class="bi bi-check-circle text-success"></i> Google Drive / Yandex Disk</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Abadiy saqlash imkoniyati</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Oila bilan ulashing</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Mobil qurilmadan ko'ring</li>
+                </ul>
+                <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg mt-3">
+                    Buyurtma berish <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="service-visual">
+                    <div class="service-visual-icon">📼 → ☁️</div>
+                    <p class="text-muted">VHS kasseta → Cloud Storage</p>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="border-secondary my-5">
+        
+        <!-- Hard Disk -->
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="service-detail-icon" style="color: #ffc107;">
+                    <i class="bi bi-hdd"></i>
+                </div>
+                <h2 class="text-white">VHS → Hard Disk</h2>
+                <p class="text-muted">
+                    Ko'p kasseta bo'lsa? Hard diskka to'liq arxivlaymiz.
+                    Ko'p sonli kasseta uchun eng qulay variant.
+                </p>
+                <ul class="service-features">
+                    <li><i class="bi bi-check-circle text-success"></i> 10+ kasseta uchun ideal</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Papkalarga tartiblab saqlanadi</li>
+                    <li><i class="bi bi-check-circle text-success"></i> External HDD ga yoki SSD ga</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Backup nusxa ham olinadi</li>
+                </ul>
+                <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg mt-3">
+                    Buyurtma berish <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="service-visual">
+                    <div class="service-visual-icon">📼 → 🗄️</div>
+                    <p class="text-muted">VHS kasseta → Hard Disk</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-darker py-6">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Ko'p so'raladigan savollar</h2>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion custom-faq" id="faqAccordion">
+                    <!-- Savol 1 -->
+                    <div class="accordion-item faq-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed faq-btn text-white fw-bold" type="button" 
+                                    data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <i class="bi bi-clock-history text-primary me-2"></i> Qancha vaqt ketadi?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body faq-content text-white">
+                                Buyurtma o'rtacha <strong>1–3 ish kuni</strong> ichida to'liq tayyor bo'ladi. Agar kassetalar soni ko'p bo'lsa, muddat 3–5 kungacha bo'lishi mumkin. Tayyor bo'lishi bilan sizga SMS yoki Telegram orqali xabar beramiz.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Savol 2 -->
+                    <div class="accordion-item faq-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed faq-btn text-white fw-bold" type="button" 
+                                    data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <i class="bi bi-shield-check text-primary me-2"></i> Kasseta juda eski yoki sifati yomon bo'lsa ham bo'ladimi?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body faq-content text-white">
+                                <strong>Ha, albatta!</strong> Biz maxsus professional apparatlar orqali kassetaning ichki lentasini tozalaymiz, tasvir ranglarini va ovozini iloji boricha tiklab, eng yuqori sifatda fleshka yoki bulutga ko'chirib beramiz.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Savol 3 -->
+                    <div class="accordion-item faq-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed faq-btn text-white fw-bold" type="button" 
+                                    data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <i class="bi bi-lock-fill text-primary me-2"></i> Kassetadagi videolar xavfsizligi va maxfiyligi qanday saqlanadi?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body faq-content text-white">
+                                <strong>100% maxfiylik kafolatlanadi.</strong> Sizning oilaviy va shaxsiy videolaringiz faqat sizga beriladi, begona ko'zlar ko'rmaydi. Buyurtma topshirilgach, kassetalaringiz o'zingizga qaytariladi va nusxalar arxivimizdan o'chiriladi.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Savol 4 -->
+                    <div class="accordion-item faq-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed faq-btn text-white fw-bold" type="button" 
+                                    data-bs-toggle="collapse" data-bs-target="#faq4">
+                                <i class="bi bi-truck text-primary me-2"></i> Yetkazib berish xizmati qanday ishlaydi?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body faq-content text-white">
+                                Yetkazib berish faqat <strong>Yandex yetkazib berish</strong> yoki <strong>BTS pochta</strong> orqali amalga oshiriladi:
+                                <ul class="mt-2 mb-2 text-white ps-3">
+                                    <li class="mb-1"><strong>$20 (Start):</strong> Yetkazib berish xarajatini mijoz o'zi to'laydi (Yandex yoki BTS orqali).</li>
+                                    <li class="mb-1"><strong>$30 (Standart):</strong> Kassetalar tayyor bo'lgach, <strong>faqat qaytarib yetkazib berish</strong> (Yandex yoki BTS orqali) biz tomonimizdan to'lanadi.</li>
+                                    <li class="mb-1"><strong>$50 (PRO) va $100 (VIP):</strong> <strong>Yetkazib berish xarajati to'liq o'zimizdan bo'ladi!</strong> Kassetalarni Yandex yoki BTS orqali qabul qilib olamiz va tayyor bo'lgach yana Yandex/BTS orqali bepul qaytarib yuboramiz.</li>
+                                </ul>
+                                Toshkent shahri bo'yicha Yandex, viloyatlar uchun esa BTS pochta orqali yuboriladi.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.service-detail-icon { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+.service-features { list-style: none; padding: 0; }
+.service-features li { padding: 8px 0; color: #ccc; }
+.service-features li i { margin-right: 10px; }
+.service-visual {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 60px;
+    text-align: center;
+}
+.service-visual-icon { font-size: 4rem; margin-bottom: 15px; }
+
+/* FAQ Styles - High Contrast White Text */
+.faq-item {
+    background: #141414 !important;
+    border: 1px solid #2a2a2a !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+.faq-btn {
+    background: #181818 !important;
+    color: #ffffff !important;
+    font-size: 1.05rem;
+    padding: 18px 22px;
+    box-shadow: none !important;
+    border: none !important;
+}
+.faq-btn:not(.collapsed) {
+    background: #1f232b !important;
+    color: #38bdf8 !important;
+    border-bottom: 1px solid #2a2a2a !important;
+}
+.faq-btn::after {
+    filter: invert(1) brightness(2);
+}
+.faq-content {
+    background: #121212 !important;
+    color: #f1f5f9 !important;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    padding: 22px;
+}
+.faq-content strong {
+    color: #38bdf8 !important;
+}
+</style>
+{% endblock %}

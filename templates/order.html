@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block title %}Buyurtma berish — UzRetro.uz{% endblock %}
+
+{% block content %}
+<div class="page-header py-5 mt-5">
+    <div class="container text-center">
+        <h1 class="text-white">📦 Buyurtma Berish</h1>
+        <p class="text-muted">Formani to'ldiring, biz 15 daqiqa ichida siz bilan bog'lanamiz</p>
+    </div>
+</div>
+
+<section class="section-dark py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="order-form-card">
+                    <form method="POST" action="{{ url_for('main.order') }}" id="orderForm">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() if csrf_token is defined else '' }}">
+                        
+                        <!-- Shaxsiy ma'lumotlar -->
+                        <div class="form-section mb-4">
+                            <h5 class="form-section-title">
+                                <i class="bi bi-person-circle text-primary"></i> Shaxsiy ma'lumotlar
+                            </h5>
+                            
+                            <div class="mb-3">
+                                <label class="form-label text-white">
+                                    Ism-familiya <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" name="name" class="form-control form-control-dark"
+                                       placeholder="Masalan: Alisher Nazarov" required
+                                       minlength="2" maxlength="100">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label text-white">
+                                    Telefon raqam <span class="text-danger">*</span>
+                                </label>
+                                <input type="tel" name="phone" class="form-control form-control-dark"
+                                       placeholder="+998 90 123 45 67" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label text-white">Email (ixtiyoriy)</label>
+                                <input type="email" name="email" class="form-control form-control-dark"
+                                       placeholder="email@example.com">
+                            </div>
+                        </div>
+                        
+                        <!-- Xizmat tanlash -->
+                        <div class="form-section mb-4">
+                            <h5 class="form-section-title">
+                                <i class="bi bi-gear text-primary"></i> Xizmat tanlash
+                            </h5>
+                            
+                            <div class="row g-3 mb-3">
+                                <div class="col-6">
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="vhs_to_flash" required>
+                                        <div class="service-option-content">
+                                            <i class="bi bi-usb-drive"></i>
+                                            <span>VHS → Fleshka</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="vhs_to_cloud">
+                                        <div class="service-option-content">
+                                            <i class="bi bi-cloud-upload"></i>
+                                            <span>VHS → Cloud</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="vhs_to_harddisk">
+                                        <div class="service-option-content">
+                                            <i class="bi bi-hdd"></i>
+                                            <span>VHS → Hard disk</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="photo_scan">
+                                        <div class="service-option-content">
+                                            <i class="bi bi-camera"></i>
+                                            <span>Foto skanerlash</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label text-white">
+                                    Kasseta soni <span class="text-danger">*</span>
+                                </label>
+                                <select name="quantity" class="form-select form-control-dark">
+                                    {% for i in range(1, 21) %}
+                                    <option value="{{ i }}">{{ i }} ta kasseta</option>
+                                    {% endfor %}
+                                    <option value="20">20+ ta (ko'p)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label text-white">Qo'shimcha izoh</label>
+                                <textarea name="description" class="form-control form-control-dark"
+                                          rows="3" placeholder="Kasseta haqida qo'shimcha ma'lumot..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg w-100 btn-glow">
+                            <i class="bi bi-send"></i> Buyurtmani yuborish
+                        </button>
+                        
+                        <p class="text-muted text-center mt-3 small">
+                            <i class="bi bi-shield-check text-success"></i>
+                            Ma'lumotlaringiz xavfsiz saqlanadi. Biz 15 daqiqa ichida qo'ng'iroq qilamiz.
+                        </p>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Qo'shimcha ma'lumot -->
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="info-sidebar">
+                    <h6 class="text-white mb-3"><i class="bi bi-clock text-primary"></i> Ishlash vaqti</h6>
+                    <p class="text-muted">Dushanba – Shanba: 9:00 – 18:00</p>
+                    
+                    <hr class="border-secondary">
+                    
+                    <h6 class="text-white mb-3"><i class="bi bi-telephone text-primary"></i> Tezkor aloqa</h6>
+                    <a href="tel:+998877700233" class="btn btn-outline-primary w-100 mb-2">
+                        <i class="bi bi-telephone"></i> +998 87 770 02 33
+                    </a>
+                    <a href="https://t.me/uzretrouz" class="btn btn-outline-primary w-100 mb-2">
+                        <i class="bi bi-telegram"></i> @uzretrouz
+                    </a>
+                    
+                    <hr class="border-secondary">
+                    
+                    <h6 class="text-white mb-3"><i class="bi bi-geo-alt text-primary"></i> Manzilimiz</h6>
+                    <p class="text-muted small mb-1">
+                        Toshkent sh., Chilonzor tumani,<br>
+                        Qatortol ko'chasi 60B, Biznes Markaz
+                    </p>
+                    <p class="text-warning small mb-0">
+                        <i class="bi bi-signpost-2"></i> Mo'ljal: Parus binosi
+                    </p>
+
+                    <hr class="border-secondary">
+                    
+                    <h6 class="text-white mb-3"><i class="bi bi-tag text-primary"></i> Tariflar (1 ta kasseta uchun)</h6>
+                    <ul class="list-unstyled text-muted small mb-2">
+                        <li>🔹 <strong>Start:</strong> $20 (ko'chirish)</li>
+                        <li>🔹 <strong>Standart:</strong> $30 (tozalash + 8GB flash)</li>
+                        <li>🔹 <strong>PRO:</strong> $50 (QR + YouTube link)</li>
+                        <li>🔹 <strong>VIP:</strong> $100 (16GB + maxsus rolik)</li>
+                    </ul>
+                    <a href="{{ url_for('main.pricing') }}" class="btn btn-outline-info btn-sm w-100">
+                        Barcha tariflarni ko'rish
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Xizmat tanlaganda animatsiya
+document.querySelectorAll('.service-option input').forEach(input => {
+    input.addEventListener('change', function() {
+        document.querySelectorAll('.service-option-content').forEach(c => c.classList.remove('selected'));
+        if (this.checked) {
+            this.nextElementSibling.classList.add('selected');
+        }
+    });
+});
+</script>
+{% endblock %}

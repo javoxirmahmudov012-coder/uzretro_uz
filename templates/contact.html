@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% block title %}Aloqa — UzRetro.uz{% endblock %}
+
+{% block content %}
+<div class="page-header py-5 mt-5">
+    <div class="container text-center">
+        <h1 class="text-white">Biz bilan bog'laning</h1>
+        <p class="text-muted">Savol yoki buyurtma uchun istalgan kanal orqali murojaat qiling</p>
+    </div>
+</div>
+
+<section class="section-dark py-6">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Aloqa kartalar -->
+            <div class="col-lg-5">
+                <div class="row g-3">
+
+                    <!-- Telefon -->
+                    <div class="col-12">
+                        <div class="contact-card-row">
+                            <div class="contact-icon-sm" style="background: rgba(40,167,69,0.1); color: #28a745;">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Telefon</div>
+                                <a href="tel:+998877700233" class="contact-value">+998 87 770 02 33</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Telegram -->
+                    <div class="col-12">
+                        <div class="contact-card-row">
+                            <div class="contact-icon-sm" style="background: rgba(0,136,204,0.1); color: #0088cc;">
+                                <i class="bi bi-telegram"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Telegram</div>
+                                <a href="https://t.me/uzretrouz" target="_blank" class="contact-value">@uzretrouz</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div class="col-12">
+                        <div class="contact-card-row">
+                            <div class="contact-icon-sm" style="background: rgba(225,48,108,0.1); color: #e1306c;">
+                                <i class="bi bi-instagram"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Instagram</div>
+                                <a href="https://instagram.com/uzretro.uz" target="_blank" class="contact-value">@uzretro.uz</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manzil -->
+                    <div class="col-12">
+                        <div class="contact-card-row">
+                            <div class="contact-icon-sm" style="background: rgba(255,71,87,0.1); color: #ff4757;">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Manzil</div>
+                                <div class="contact-value">
+                                    Toshkent shahri, Chilonzor tumani,<br>
+                                    Qatortol ko'chasi 60B, Biznes Markaz
+                                </div>
+                                <div class="contact-hint">
+                                    <i class="bi bi-signpost-2"></i> Mo'ljal: <strong>Parus binosi</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ish vaqti -->
+                    <div class="col-12">
+                        <div class="contact-card-row">
+                            <div class="contact-icon-sm" style="background: rgba(255,193,7,0.1); color: #ffc107;">
+                                <i class="bi bi-clock-fill"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Ish vaqti</div>
+                                <div class="contact-value">Dushanba – Shanba</div>
+                                <div class="contact-hint">09:00 – 18:00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Buyurtma tugmasi -->
+                <div class="mt-4">
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 btn-glow">
+                        <i class="bi bi-cart-plus"></i> Buyurtma berish
+                    </a>
+                    <a href="https://t.me/uzretrouz" target="_blank" class="btn btn-outline-light btn-lg w-100 mt-2">
+                        <i class="bi bi-telegram"></i> Telegram orqali yozish
+                    </a>
+                </div>
+            </div>
+
+            <!-- Xarita -->
+            <div class="col-lg-7">
+                <div class="map-container">
+                    <div class="map-header mb-3">
+                        <h5 class="text-white mb-1">
+                            <i class="bi bi-geo-alt text-primary"></i> Bizning manzil
+                        </h5>
+                        <p class="text-muted small mb-0">
+                            Chilonzor tumani, Qatortol ko'chasi 60B &nbsp;|&nbsp;
+                            <span class="text-warning">Mo'ljal: Parus binosi</span>
+                        </p>
+                    </div>
+
+                    <!-- Google Maps embed — Parus, Chilonzor -->
+                    <div class="map-frame">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.1!2d69.2151!3d41.2995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0x3a1a6f61aee1d1c7!2sParus%20Shopping%20Center!5e0!3m2!1suz!2suz!4v1234567890"
+                            width="100%"
+                            height="380"
+                            style="border:0; border-radius: 16px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- Yo'l ko'rsatma -->
+                    <div class="directions-box mt-3">
+                        <div class="row g-2">
+                            <div class="col-sm-4">
+                                <div class="direction-item">
+                                    <i class="bi bi-train-front text-primary"></i>
+                                    <span>Metro: Chilonzor</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="direction-item">
+                                    <i class="bi bi-building text-warning"></i>
+                                    <span>Parus binosi yaqinida</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="direction-item">
+                                    <i class="bi bi-car-front text-success"></i>
+                                    <span>Parking mavjud</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Parus+Tashkent+Chilonzor" target="_blank"
+                       class="btn btn-outline-primary w-100 mt-3">
+                        <i class="bi bi-map"></i> Google Maps da ochish
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.contact-card-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 18px 20px;
+    transition: border-color 0.2s;
+}
+.contact-card-row:hover { border-color: rgba(0,123,255,0.3); }
+.contact-icon-sm {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+.contact-label { color: #666; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.contact-value { color: #fff; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+a.contact-value:hover { color: #007bff; }
+.contact-hint { color: #888; font-size: 0.82rem; margin-top: 4px; }
+
+.map-frame { border-radius: 16px; overflow: hidden; border: 1px solid #2a2a2a; }
+
+.directions-box {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 14px;
+}
+.direction-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aaa;
+    font-size: 0.82rem;
+}
+.direction-item i { font-size: 1rem; }
+</style>
+{% endblock %}
