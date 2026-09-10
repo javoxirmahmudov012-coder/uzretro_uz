@@ -5,7 +5,13 @@ load_dotenv()
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'uzretro-secret-key-2024'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///uzretro.db'
+    
+    # Serverless (Vercel) uchun /tmp/ katalogida yozish ruxsati bor
+    if os.environ.get('VERCEL'):
+        SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:////tmp/uzretro.db'
+    else:
+        SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///uzretro.db'
+        
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     # Telegram Bot

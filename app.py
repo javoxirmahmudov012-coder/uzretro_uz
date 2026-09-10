@@ -31,8 +31,11 @@ def create_app():
     
     # Ma'lumotlar bazasini yaratish
     with app.app_context():
-        db.create_all()
-        _create_default_admin(app)
+        try:
+            db.create_all()
+            _create_default_admin(app)
+        except Exception as e:
+            print(f"DB Init info: {e}")
     
     return app
 
