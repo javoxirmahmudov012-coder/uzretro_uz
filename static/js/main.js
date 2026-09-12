@@ -57,21 +57,118 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animatsiya: Scroll on visibility
-const observer = new IntersectionObserver((entries) => {
+// ====== COUNTER ANIMATSIYA ======
+// Hero statistikalar uchun raqam sanash animatsiyasi
+function animateCounter(element, target, duration = 2000) {
+    const suffix = element.textContent.replace(/[\d,.]/g, '').trim();
+    const isK = suffix.includes('K');
+    let displayTarget = target;
+    
+    if (isK) displayTarget = target / 1000;
+    
+    let start = 0;
+    const startTime = performance.now();
+    
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function (ease-out-cubic)
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * displayTarget);
+        
+        if (isK) {
+            element.textContent = current + 'K+';
+        } else if (suffix.includes('%')) {
+            element.textContent = current + '%';
+        } else {
+            element.textContent = current.toLocaleString() + '+';
+        }
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    
+    requestAnimationFrame(update);
+}
+
+// Counter observer — raqamlar ko'ringanda sana boshlaydi
+const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            const el = entry.target;
+            const count = parseInt(el.getAttribute('data-count'));
+            if (count && !el.dataset.animated) {
+                el.dataset.animated = 'true';
+                animateCounter(el, count);
+            }
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.5 });
 
-document.querySelectorAll('.service-card, .review-card, .step-circle').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+document.querySelectorAll('.stat-num[data-count]').forEach(el => {
+    counterObserver.observe(el);
 });
 
-console.log('🚀 UzRetro.uz loaded!');
+// ====== PARALLAX EFFEKT ======
+// Hero section uchun yengil parallax
+const heroSection = document.querySelector('.hero-section');
+if (heroSection) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        if (scrolled < window.innerHeight) {
+            const heroContent = heroSection.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
+                heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+            }
+        }
+    }, { passive: true });
+}
+
+// ====== NAVBAR ACTIVE LINK ======
+// Joriy sahifaga mos nav-link ni active qilish
+const currentPath = window.location.pathname;
+document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath) {
+        link.classList.add('active');
+        link.style.color = '#38bdf8';
+        link.style.opacity = '1';
+    }
+});
+
+// ====== SERVICE OPTION TANLASH ANIMATSIYASI ======
+// Xizmat tanlash radio buttonlar uchun kuchaytirilgan animatsiya
+document.querySelectorAll('.service-option input').forEach(input => {
+    input.addEventListener('change', function() {
+        document.querySelectorAll('.service-option-content').forEach(c => {
+            c.classList.remove('selected');
+            c.style.transform = '';
+        });
+        if (this.checked) {
+            const content = this.nextElementSibling;
+            content.classList.add('selected');
+        }
+    });
+});
+
+// ====== SCROLL PROGRESS BAR ======
+// Sahifa scroll progressini ko'rsatish
+const progressBar = document.createElement('div');
+progressBar.style.cssText = `
+    position: fixed; top: 0; left: 0; height: 3px; z-index: 99999;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    transition: width 0.1s linear; width: 0%;
+`;
+document.body.appendChild(progressBar);
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+}, { passive: true });
+
+console.log('🚀 UzRetro.uz loaded with animations!');

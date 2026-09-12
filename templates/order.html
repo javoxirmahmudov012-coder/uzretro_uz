@@ -12,10 +12,9 @@
 <section class="section-dark py-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-7">
+            <div class="col-lg-7" data-aos="fade-right">
                 <div class="order-form-card">
                     <form method="POST" action="{{ url_for('main.order') }}" id="orderForm">
-                        <input type="hidden" name="csrf_token" value="{{ csrf_token() if csrf_token is defined else '' }}">
                         
                         <!-- Shaxsiy ma'lumotlar -->
                         <div class="form-section mb-4">
@@ -97,7 +96,7 @@
                                     Kasseta soni <span class="text-danger">*</span>
                                 </label>
                                 <select name="quantity" class="form-select form-control-dark">
-                                    {% for i in range(1, 21) %}
+                                    {% for i in range(1, 20) %}
                                     <option value="{{ i }}">{{ i }} ta kasseta</option>
                                     {% endfor %}
                                     <option value="20">20+ ta (ko'p)</option>
@@ -124,7 +123,7 @@
             </div>
             
             <!-- Qo'shimcha ma'lumot -->
-            <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
                 <div class="info-sidebar">
                     <h6 class="text-white mb-3"><i class="bi bi-clock text-primary"></i> Ishlash vaqti</h6>
                     <p class="text-muted">Dushanba – Shanba: 9:00 – 18:00</p>
@@ -159,8 +158,18 @@
                         <li>🔹 <strong>PRO:</strong> $50 (QR + YouTube link)</li>
                         <li>🔹 <strong>VIP:</strong> $100 (16GB + maxsus rolik)</li>
                     </ul>
+
+                    <div class="p-2 mb-3 mt-2 rounded" style="background: rgba(40, 167, 69, 0.1); border: 1px dashed rgba(40, 167, 69, 0.4);">
+                        <div class="text-success fw-bold small mb-1"><i class="bi bi-gift-fill me-1"></i> Hajmga qarab chegirmalar:</div>
+                        <ul class="list-unstyled text-white small mb-0 ps-1" style="font-size: 0.82rem;">
+                            <li>• <strong>3 tadan ko'p:</strong> <span class="text-warning">-10% chegirma</span></li>
+                            <li>• <strong>5 tadan ko'p:</strong> <span class="text-warning">-15% chegirma</span></li>
+                            <li>• <strong>8 tadan ko'p:</strong> <span class="text-danger fw-bold">-20% super chegirma</span></li>
+                        </ul>
+                    </div>
+
                     <a href="{{ url_for('main.pricing') }}" class="btn btn-outline-info btn-sm w-100">
-                        Barcha tariflarni ko'rish
+                        Barcha tariflar va chegirmalar
                     </a>
                 </div>
             </div>

@@ -335,6 +335,141 @@ body {
 }
 
 
+/* -------- ENHANCED ANIMATIONS -------- */
+
+/* Navbar brand shimmer */
+.navbar-brand .brand-text {
+    position: relative;
+    background: linear-gradient(90deg, #fff 40%, #38bdf8 50%, #fff 60%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+.brand-dot {
+    color: var(--primary) !important;
+    -webkit-text-fill-color: var(--primary) !important;
+}
+
+/* Enhanced service card hover */
+.service-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.service-card:hover {
+    border-color: rgba(0,123,255,0.6);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,123,255,0.15);
+}
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+/* Enhanced review card hover */
+.review-card {
+    transition: all 0.3s ease;
+}
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,123,255,0.4);
+    box-shadow: 0 15px 35px rgba(0,123,255,0.1);
+}
+
+/* Step circle pulse on hover */
+.step-circle {
+    transition: all 0.3s ease;
+}
+.step-circle:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(0,123,255,0.4);
+    background: rgba(0,123,255,0.2);
+}
+
+/* Service option selection pulse animation */
+.service-option-content {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.service-option-content.selected {
+    animation: selectPulse 0.4s ease;
+    border-color: var(--primary);
+    background: rgba(0,123,255,0.1);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0,123,255,0.3);
+}
+@keyframes selectPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Enhanced button glow pulse */
+.btn-glow {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(0,123,255,0.4); }
+    50% { box-shadow: 0 0 35px rgba(0,123,255,0.7), 0 0 60px rgba(0,123,255,0.2); }
+}
+
+/* Text gradient animation */
+.text-gradient {
+    background-size: 200% auto;
+    animation: textGradient 4s linear infinite;
+}
+@keyframes textGradient {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
+/* Hero section floating particles effect */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite reverse;
+}
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -30px); }
+    66% { transform: translate(-20px, 20px); }
+}
+
+/* Info sidebar smooth appearance */
+.info-sidebar {
+    transition: all 0.3s ease;
+}
+.info-sidebar:hover {
+    border-color: rgba(0,123,255,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Page header subtle animation */
+.page-header h1 {
+    animation: fadeInDown 0.6s ease;
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll indicator enhanced */
+.scroll-indicator {
+    animation: bounce 2s infinite, fadeInOut 2s ease-in-out infinite;
+}
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
 /* -------- RESPONSIVE -------- */
 @media (max-width: 768px) {
     .hero-title { font-size: 2rem; }
@@ -342,4 +477,5 @@ body {
     .order-form-card { padding: 24px; }
     .success-card { padding: 30px 20px; }
     .py-6 { padding-top: 50px; padding-bottom: 50px; }
+    .btn-glow { animation: none; box-shadow: 0 0 15px rgba(0,123,255,0.3); }
 }
