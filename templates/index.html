@@ -199,131 +199,133 @@
 </section>
 
 <!-- Mijozlar fikri -->
-<section class="section-darker py-6">
+<section class="section-darker py-5">
     <div class="container">
-        <div class="section-header text-center mb-5">
+        <div class="section-header text-center mb-4">
             <span class="section-badge">Ishonch</span>
             <h2 class="section-title">💬 Mijozlar fikri</h2>
             <p class="section-subtitle">Haqiqiy mijozlarimizning Telegram'dagi xabarlari</p>
         </div>
         
-        <div class="row g-4">
-            <!-- Eldorbek -->
-            <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="0">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">EA</div>
-                        <div>
-                            <h6 class="testimonial-name">Eldorbek aka</h6>
-                            <span class="testimonial-location"><i class="bi bi-geo-alt"></i> Andijon shahridan</span>
+        <div class="row g-3">
+            <!-- 1: Eldorbek -->
+            <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="testimonial-card-compact h-100">
+                    <div class="t-compact-header">
+                        <div class="t-compact-avatar">EA</div>
+                        <div class="t-compact-info">
+                            <h6 class="t-compact-name">Eldorbek aka</h6>
+                            <span class="t-compact-loc"><i class="bi bi-geo-alt"></i> Andijon</span>
                         </div>
-                        <div class="testimonial-platform">
-                            <i class="bi bi-telegram"></i>
-                        </div>
+                        <i class="bi bi-telegram text-primary ms-auto"></i>
                     </div>
-                    <div class="testimonial-body">
-                        <p>«uzretro.uz jamoasi sizlarga katta rahmat, men Andijon shahardan man. 2002 yil nikoh to'yimni kassetasini 24 yilda keyin ham sifatli qilib fleshkaga ko'chirib berdilar. Bunaka tinik sifatli chiqadi deb o'ylamagan edim, a'lo darajada ko'chirilgan tarixni o'tgan kattalarni ko'rdim. Sizlarga katta rahmat, ishlaringizga omad, doim sog' bo'linglar!»</p>
+                    <div class="t-compact-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="t-compact-text">«2002 yil to'yim kassetasini 24 yildan keyin ham sifatli qilib fleshkaga ko'chirib berdinglar, a'lo darajada!»</p>
+                    <div class="t-compact-img-wrap" data-bs-toggle="modal" data-bs-target="#reviewModal" data-img="{{ url_for('static', filename='img/reviews/review_eldorbek.png') }}" data-title="Eldorbek aka (Andijon)">
+                        <img src="{{ url_for('static', filename='img/reviews/review_eldorbek.png') }}" alt="Eldorbek otzivi">
+                        <div class="t-compact-overlay"><i class="bi bi-zoom-in"></i> Kattalashtirish</div>
                     </div>
-                    <div class="testimonial-screenshot">
-                        <img src="{{ url_for('static', filename='img/reviews/review_eldorbek.png') }}" alt="Eldorbek otzivi" class="img-fluid rounded">
-                    </div>
-                    <div class="testimonial-footer">
-                        <span class="testimonial-service"><i class="bi bi-usb-drive"></i> VHS → Fleshka</span>
-                        <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                    <div class="t-compact-footer">
+                        <span class="badge bg-primary-subtle text-primary border"><i class="bi bi-usb-drive"></i> VHS → Fleshka</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Bahodir -->
-            <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">BA</div>
-                        <div>
-                            <h6 class="testimonial-name">Bahodir aka</h6>
-                            <span class="testimonial-location"><i class="bi bi-instagram"></i> Instagram mijoz</span>
+            <!-- 2: Bahodir -->
+            <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card-compact h-100">
+                    <div class="t-compact-header">
+                        <div class="t-compact-avatar" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">BA</div>
+                        <div class="t-compact-info">
+                            <h6 class="t-compact-name">Bahodir aka</h6>
+                            <span class="t-compact-loc"><i class="bi bi-instagram"></i> Instagram</span>
                         </div>
-                        <div class="testimonial-platform">
-                            <i class="bi bi-telegram"></i>
-                        </div>
+                        <i class="bi bi-telegram text-primary ms-auto"></i>
                     </div>
-                    <div class="testimonial-body">
-                        <p>«Ko'rdim aka zo'r bo'pti, rahmat kattakon silaga 🔥 Uydegilargayam ancha yoqsa kerak. Instagramdan bitta chiroyli istoriya qo'yvorsez hursand bo'lamiz aka!»</p>
+                    <div class="t-compact-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="t-compact-text">«Ko'rdim aka zo'r bo'pti, rahmat kattakon silaga 🔥 Uydegilargayam ancha yoqdi!»</p>
+                    <div class="t-compact-img-wrap" data-bs-toggle="modal" data-bs-target="#reviewModal" data-img="{{ url_for('static', filename='img/reviews/review_bahodir.png') }}" data-title="Bahodir aka">
+                        <img src="{{ url_for('static', filename='img/reviews/review_bahodir.png') }}" alt="Bahodir otzivi">
+                        <div class="t-compact-overlay"><i class="bi bi-zoom-in"></i> Kattalashtirish</div>
                     </div>
-                    <div class="testimonial-screenshot">
-                        <img src="{{ url_for('static', filename='img/reviews/review_bahodir.png') }}" alt="Bahodir otzivi" class="img-fluid rounded">
-                    </div>
-                    <div class="testimonial-footer">
-                        <span class="testimonial-service"><i class="bi bi-usb-drive"></i> VHS → Fleshka</span>
-                        <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                    <div class="t-compact-footer">
+                        <span class="badge bg-primary-subtle text-primary border"><i class="bi bi-usb-drive"></i> VHS → Fleshka</span>
                     </div>
                 </div>
             </div>
             
-            <!-- Sherbek -->
-            <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #5cb85c, #00d4ff);">SH</div>
-                        <div>
-                            <h6 class="testimonial-name">Sherbek aka</h6>
-                            <span class="testimonial-location"><i class="bi bi-calendar"></i> 12 iyul</span>
+            <!-- 3: Sherbek -->
+            <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card-compact h-100">
+                    <div class="t-compact-header">
+                        <div class="t-compact-avatar" style="background: linear-gradient(135deg, #5cb85c, #00d4ff);">SH</div>
+                        <div class="t-compact-info">
+                            <h6 class="t-compact-name">Sherbek aka</h6>
+                            <span class="t-compact-loc"><i class="bi bi-calendar-check"></i> 12 iyul</span>
                         </div>
-                        <div class="testimonial-platform">
-                            <i class="bi bi-telegram"></i>
-                        </div>
+                        <i class="bi bi-telegram text-primary ms-auto"></i>
                     </div>
-                    <div class="testimonial-body">
-                        <p>«Aka rahmat 👍 tayyorlagan ishlaringiz menga va uydagilargayam yoqdi. Juda sifatli chiqibdi.. Ishlarizga omad!»</p>
+                    <div class="t-compact-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="t-compact-text">«Aka rahmat 👍 tayyorlagan ishlaringiz menga va uydagilargayam yoqdi. Juda sifatli chiqibdi..»</p>
+                    <div class="t-compact-img-wrap" data-bs-toggle="modal" data-bs-target="#reviewModal" data-img="{{ url_for('static', filename='img/reviews/review_sherbek.png') }}" data-title="Sherbek aka">
+                        <img src="{{ url_for('static', filename='img/reviews/review_sherbek.png') }}" alt="Sherbek otzivi">
+                        <div class="t-compact-overlay"><i class="bi bi-zoom-in"></i> Kattalashtirish</div>
                     </div>
-                    <div class="testimonial-screenshot">
-                        <img src="{{ url_for('static', filename='img/reviews/review_sherbek.png') }}" alt="Sherbek otzivi" class="img-fluid rounded">
-                    </div>
-                    <div class="testimonial-footer">
-                        <span class="testimonial-service"><i class="bi bi-usb-drive"></i> VHS → Fleshka</span>
-                        <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                    <div class="t-compact-footer">
+                        <span class="badge bg-primary-subtle text-primary border"><i class="bi bi-usb-drive"></i> VHS → Fleshka</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Boburmirzo -->
-            <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #e91e63, #9c27b0);">BM</div>
-                        <div>
-                            <h6 class="testimonial-name">Boburmirzo</h6>
-                            <span class="testimonial-location"><i class="bi bi-instagram"></i> @boburmirzo_english</span>
+            <!-- 4: Boburmirzo -->
+            <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-card-compact h-100">
+                    <div class="t-compact-header">
+                        <div class="t-compact-avatar" style="background: linear-gradient(135deg, #e91e63, #9c27b0);">BM</div>
+                        <div class="t-compact-info">
+                            <h6 class="t-compact-name">Boburmirzo</h6>
+                            <span class="t-compact-loc"><i class="bi bi-instagram"></i> @boburmirzo</span>
                         </div>
-                        <div class="testimonial-platform">
-                            <i class="bi bi-instagram"></i>
-                        </div>
+                        <i class="bi bi-instagram text-danger ms-auto"></i>
                     </div>
-                    <div class="testimonial-body">
-                        <p>«@uzretro.uz jamoasiga katta rahmat! Eski to'y kasetasini fleshkaga ko'chirib berishdi! Tanlovingiz va ishonchingiz uchun rahmat... 🤗»</p>
+                    <div class="t-compact-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="t-compact-text">«@uzretro.uz jamoasiga katta rahmat! Eski to'y kasetasini fleshkaga ko'chirib berishdi! 🤗»</p>
+                    <div class="t-compact-img-wrap" data-bs-toggle="modal" data-bs-target="#reviewModal" data-img="{{ url_for('static', filename='img/reviews/review_boburmirzo.jpg') }}" data-title="Boburmirzo">
+                        <img src="{{ url_for('static', filename='img/reviews/review_boburmirzo.jpg') }}" alt="Boburmirzo otzivi">
+                        <div class="t-compact-overlay"><i class="bi bi-zoom-in"></i> Kattalashtirish</div>
                     </div>
-                    <div class="testimonial-screenshot">
-                        <img src="{{ url_for('static', filename='img/reviews/review_boburmirzo.jpg') }}" alt="Boburmirzo otzivi" class="img-fluid rounded">
-                    </div>
-                    <div class="testimonial-footer">
-                        <span class="testimonial-service"><i class="bi bi-usb-drive"></i> VHS → Fleshka</span>
-                        <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                    <div class="t-compact-footer">
+                        <span class="badge bg-primary-subtle text-primary border"><i class="bi bi-usb-drive"></i> VHS → Fleshka</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="text-center mt-5" data-aos="fade-up">
-            <p class="text-muted mb-3">Siz ham bizning mijozimiz bo'lmoqchimisiz?</p>
-            <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg btn-glow me-2">
+        <div class="text-center mt-4" data-aos="fade-up">
+            <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-sm btn-glow px-4 me-2">
                 <i class="bi bi-cart-plus"></i> Buyurtma berish
             </a>
-            <a href="https://t.me/uzretrouz" target="_blank" class="btn btn-outline-info btn-lg">
-                <i class="bi bi-telegram"></i> Telegram'da yozing
+            <a href="https://t.me/uzretrouz" target="_blank" class="btn btn-outline-info btn-sm px-4">
+                <i class="bi bi-telegram"></i> Telegram'da yozish
             </a>
         </div>
     </div>
 </section>
+
+<!-- Screenshot Zoom Modal -->
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content review-modal-content">
+            <div class="modal-header border-0 pb-0">
+                <h6 class="modal-title text-white" id="reviewModalLabel">Mijoz xabari</h6>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Yopish"></button>
+            </div>
+            <div class="modal-body text-center p-3">
+                <img id="reviewModalImg" src="" alt="Mijoz sharhi" class="img-fluid rounded-3" style="max-height: 80vh; object-fit: contain;">
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- CTA Section -->
 <section class="cta-section py-6">

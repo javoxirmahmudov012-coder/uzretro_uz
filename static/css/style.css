@@ -663,32 +663,31 @@ body {
 .tariff-option-content .tariff-name { font-weight: 600; flex: 1; }
 .tariff-option-content .tariff-price { color: var(--primary); font-weight: 700; }
 
-/* -------- TESTIMONIALS -------- */
-.testimonial-card {
+/* -------- TESTIMONIALS COMPACT -------- */
+.testimonial-card-compact {
     background: var(--bg-card2);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 0;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    height: 100%;
+    border-radius: 14px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 123, 255, 0.4);
-    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.1);
+.testimonial-card-compact:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 123, 255, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.15);
 }
-.testimonial-header {
+.t-compact-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 20px 20px 0;
+    gap: 10px;
+    margin-bottom: 8px;
 }
-.testimonial-avatar {
-    width: 45px;
-    height: 45px;
+.t-compact-avatar {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: linear-gradient(135deg, #007bff, #00d4ff);
     display: flex;
@@ -696,67 +695,92 @@ body {
     justify-content: center;
     color: #fff;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     flex-shrink: 0;
 }
-.testimonial-name {
+.t-compact-info {
+    line-height: 1.2;
+}
+.t-compact-name {
     color: #fff;
+    font-size: 0.88rem;
     font-weight: 700;
-    font-size: 0.95rem;
     margin: 0;
 }
-.testimonial-location {
+.t-compact-loc {
     color: #888;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
 }
-.testimonial-location i { margin-right: 3px; }
-.testimonial-platform {
-    margin-left: auto;
-    color: #0088cc;
-    font-size: 1.3rem;
+.t-compact-stars {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
-.testimonial-body {
-    padding: 15px 20px;
-    flex: 1;
-}
-.testimonial-body p {
+.t-compact-text {
     color: #cbd5e1;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin: 0;
-    font-style: italic;
-}
-.testimonial-screenshot {
-    padding: 0 15px;
+    font-size: 0.8rem;
+    line-height: 1.45;
     margin-bottom: 12px;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 52px;
 }
-.testimonial-screenshot img {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    transition: transform 0.3s ease;
+.t-compact-img-wrap {
+    position: relative;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
     cursor: pointer;
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    background: #000;
 }
-.testimonial-screenshot img:hover {
-    transform: scale(1.02);
+.t-compact-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s ease;
 }
-.testimonial-footer {
+.t-compact-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.t-compact-img-wrap:hover .t-compact-overlay {
+    opacity: 1;
+}
+.t-compact-img-wrap:hover img {
+    transform: scale(1.05);
+}
+.t-compact-footer {
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
-    border-top: 1px solid var(--border);
-    background: rgba(0, 123, 255, 0.03);
 }
-.testimonial-service {
-    color: #6cb2ff;
-    font-size: 0.8rem;
-    font-weight: 600;
+.t-compact-footer .badge {
+    font-size: 0.72rem;
+    font-weight: 500;
 }
-.testimonial-service i { margin-right: 5px; }
-.testimonial-stars {
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+
+/* Modal for review zoom */
+.review-modal-content {
+    background: #141414;
+    border: 1px solid var(--border);
+    border-radius: 16px;
 }
 
 /* -------- RESPONSIVE -------- */
@@ -771,7 +795,7 @@ body {
     .gallery-before-after { flex-direction: column; }
     .gallery-before { border-right: none; border-bottom: 1px solid var(--border); }
     .gallery-before-after .arrow-divider { top: auto; bottom: -20px; left: 50%; transform: translateX(-50%) rotate(90deg); }
-    .testimonial-card { margin-bottom: 10px; }
+    .testimonial-card-compact { margin-bottom: 8px; }
 }
 
 /* =============================================
@@ -984,25 +1008,33 @@ body {
     color: #007bff;
 }
 
-/* Mijozlar fikri (Testimonials) */
-[data-theme="light"] .testimonial-card {
+/* Mijozlar fikri (Testimonials Compact) */
+[data-theme="light"] .testimonial-card-compact {
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
-[data-theme="light"] .testimonial-name {
+[data-theme="light"] .t-compact-name {
     color: #0f172a;
 }
-[data-theme="light"] .testimonial-body p {
+[data-theme="light"] .t-compact-text {
     color: #334155;
 }
-[data-theme="light"] .testimonial-footer {
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
+[data-theme="light"] .t-compact-img-wrap {
+    border-color: #e2e8f0;
+    background: #f1f5f9;
 }
-[data-theme="light"] .testimonial-screenshot img {
-    border: 1px solid #e2e8f0;
+[data-theme="light"] .review-modal-content {
+    background: #ffffff;
+    border-color: #e2e8f0;
 }
+[data-theme="light"] .review-modal-content .modal-title {
+    color: #0f172a !important;
+}
+[data-theme="light"] .review-modal-content .btn-close {
+    filter: none;
+}
+
 
 /* Buyurtma formasi va maydonlar */
 [data-theme="light"] .form-control-dark {

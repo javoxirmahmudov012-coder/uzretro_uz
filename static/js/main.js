@@ -206,5 +206,22 @@ if (document.readyState === 'loading') {
     initTheme();
 }
 
+// ====== REVIEWS MODAL ZOOM ======
+const reviewModal = document.getElementById('reviewModal');
+if (reviewModal) {
+    reviewModal.addEventListener('show.bs.modal', function(event) {
+        const trigger = event.relatedTarget;
+        if (trigger) {
+            const imgSrc = trigger.getAttribute('data-img');
+            const title = trigger.getAttribute('data-title');
+            const modalImg = reviewModal.querySelector('#reviewModalImg');
+            const modalTitle = reviewModal.querySelector('#reviewModalLabel');
+            if (modalImg && imgSrc) modalImg.src = imgSrc;
+            if (modalTitle && title) modalTitle.textContent = title;
+        }
+    });
+}
+
 console.log('🚀 UzRetro.uz loaded with animations!');
+
 
