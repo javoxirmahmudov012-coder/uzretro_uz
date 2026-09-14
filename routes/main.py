@@ -85,3 +85,7 @@ def robots():
 @main.route('/sitemap.xml')
 def sitemap():
     return send_from_directory(current_app.static_folder, 'sitemap.xml', mimetype='application/xml')
+
+@main.route('/google1453207274e1823c.html')
+def google_verify():
+    return send_from_directory(current_app.static_folder, 'google1453207274e1823c.html')
