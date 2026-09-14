@@ -24,5 +24,6 @@ class Config:
     BUSINESS_ADDRESS = "Toshkent shahri, Chilonzor tumani, Qatortol ko'chasi 60B, Biznes Markaz"
     BUSINESS_LANDMARK = "Parus binosi (savdo markazi)"
     BUSINESS_TELEGRAM = "https://t.me/uzretrouz"
+    BUSINESS_TELEGRAM_CHANNEL = "https://t.me/uzretrouzchannel"
     BUSINESS_INSTAGRAM = "https://instagram.com/uzretro.uz"
     BUSINESS_TELEGRAM_USERNAME = "@uzretrouz"
