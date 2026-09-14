@@ -96,6 +96,14 @@
                             <a href="tel:{{ order.customer_phone }}" class="btn btn-sm btn-outline-info fw-bold text-nowrap">
                                 <i class="bi bi-telephone-fill me-1"></i>{{ order.customer_phone }}
                             </a>
+                            {% set tg_user = order.customer_telegram or order.customer_email %}
+                            {% if tg_user %}
+                                <div class="mt-1">
+                                    <a href="https://t.me/{{ tg_user.lstrip('@') }}" target="_blank" class="small text-info fw-semibold text-decoration-none">
+                                        <i class="bi bi-telegram"></i> @{{ tg_user.lstrip('@') }}
+                                    </a>
+                                </div>
+                            {% endif %}
                         </td>
                         <td><span class="fw-semibold">{{ order.service_name() }}</span></td>
                         <td><span class="badge bg-secondary-subtle text-secondary-emphasis fw-bold px-2 py-1 fs-6">{{ order.quantity }} ta</span></td>

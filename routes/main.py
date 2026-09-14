@@ -21,11 +21,14 @@ def order():
     if request.method == 'POST':
         name = request.form.get('name', '').strip()
         phone = request.form.get('phone', '').strip()
-        email = request.form.get('email', '').strip()
+        telegram = request.form.get('telegram', '').strip() or request.form.get('telegram_username', '').strip()
         address = request.form.get('address', '').strip()
         service = request.form.get('service', '')
         quantity = request.form.get('quantity', 1)
         description = request.form.get('description', '').strip()
+        
+        if telegram:
+            telegram = '@' + telegram.lstrip('@')
         
         if not name or not phone or not service:
             flash('Iltimos, barcha majburiy maydonlarni to\'ldiring!', 'danger')
@@ -34,7 +37,8 @@ def order():
         new_order = Order(
             customer_name=name,
             customer_phone=phone,
-            customer_email=email if email else None,
+            customer_telegram=telegram if telegram else None,
+            customer_email=telegram if telegram else None,
             customer_address=address if address else None,
             service_type=service,
             quantity=int(quantity) if quantity else 1,

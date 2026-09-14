@@ -40,6 +40,12 @@ def create_app():
                     conn.commit()
                 except Exception:
                     pass
+                try:
+                    import sqlalchemy as sa
+                    conn.execute(sa.text("ALTER TABLE orders ADD COLUMN customer_telegram VARCHAR(100)"))
+                    conn.commit()
+                except Exception:
+                    pass
             _create_default_admin(app)
         except Exception as e:
             print(f"DB Init info: {e}")

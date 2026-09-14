@@ -60,15 +60,22 @@ def send_new_order_notification(order):
     from datetime import datetime
     order_time = (order.created_at or datetime.utcnow()).strftime('%d.%m.%Y %H:%M')
     address = getattr(order, 'customer_address', None) or 'Kiritilmagan'
+    tg_user = getattr(order, 'customer_telegram', None) or getattr(order, 'customer_email', None)
     
     loc_btn = ""
     if 'http' in address or 'maps' in address:
         loc_btn = f"\n🗺️ <a href='{address}'>Xaritada ochish</a>"
 
+    tg_line = ""
+    if tg_user:
+        clean_user = tg_user.lstrip('@')
+        tg_line = f"✈️ <b>Telegram:</b> @{clean_user} (<a href='https://t.me/{clean_user}'>Yozish</a>)\n"
+
     msg = (
         f"🔔 <b>YANGI BUYURTMA #{order.id}</b>\n\n"
         f"👤 <b>Mijoz:</b> {order.customer_name}\n"
         f"📞 <b>Telefon:</b> {order.customer_phone}\n"
+        f"{tg_line}"
         f"📍 <b>Manzil / Lokatsiya:</b> {address}{loc_btn}\n"
         f"📼 <b>Xizmat:</b> {order.service_name()}\n"
         f"🔢 <b>Miqdor:</b> {order.quantity} ta kasseta\n"

@@ -49,8 +49,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-body-secondary fw-bold">Email manzili:</td>
-                                <td><span class="fw-semibold">{{ order.customer_email or 'Kiritilmagan' }}</span></td>
+                                <td class="text-body-secondary fw-bold">Telegram profili:</td>
+                                <td>
+                                    {% set tg_user = order.customer_telegram or order.customer_email %}
+                                    {% if tg_user %}
+                                        <a href="https://t.me/{{ tg_user.lstrip('@') }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info fw-bold py-1 px-3">
+                                            <i class="bi bi-telegram me-1"></i>@{{ tg_user.lstrip('@') }} <span class="small opacity-75 ms-1">&rarr; Yozish</span>
+                                        </a>
+                                    {% else %}
+                                        <span class="text-muted fw-semibold">Kiritilmagan</span>
+                                    {% endif %}
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-body-secondary fw-bold">Xizmat turi:</td>
