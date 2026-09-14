@@ -196,23 +196,48 @@
                             </div>
                             
                             <div class="mb-3 mt-3">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
                                     <label class="form-label text-white fw-bold mb-0">
                                         <i class="bi bi-geo-alt-fill text-danger me-1"></i> Yetkazib berish manzili / Lokatsiya
                                     </label>
-                                    <button type="button" class="btn btn-outline-info btn-sm py-1 px-2 fw-semibold rounded-pill" id="btnGetLocation" style="font-size: 0.8rem;">
-                                        <i class="bi bi-crosshair me-1"></i> Lokatsiyamni aniqlash
-                                    </button>
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn btn-outline-warning btn-sm py-1 px-2 fw-semibold rounded-pill" id="btnBtsQuick" style="font-size: 0.8rem;">
+                                            <i class="bi bi-box-seam me-1"></i> Viloyatdan (BTS)
+                                        </button>
+                                        <button type="button" class="btn btn-outline-info btn-sm py-1 px-2 fw-semibold rounded-pill" id="btnGetLocation" style="font-size: 0.8rem;">
+                                            <i class="bi bi-crosshair me-1"></i> Lokatsiyamni aniqlash
+                                        </button>
+                                    </div>
                                 </div>
+                                
+                                <!-- Viloyatdan BTS orqali jo'natuvchilar uchun info banner -->
+                                <div id="btsInfoBox" class="p-3 mb-2 rounded-3" style="display: none; background: rgba(14, 165, 233, 0.12); border: 1.5px solid #0ea5e9;">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <div class="fw-bold text-info small">
+                                            <i class="bi bi-box-seam-fill me-1"></i> Viloyatdan jo'natuvchilar uchun bizning BTS manzilimiz:
+                                        </div>
+                                        <button type="button" class="btn btn-sm btn-outline-info py-0 px-2 rounded-pill" id="copyBtsBtnForm" style="font-size: 0.75rem;">
+                                            <i class="bi bi-clipboard me-1"></i> Nusxa olish
+                                        </button>
+                                    </div>
+                                    <div class="small text-white" style="line-height: 1.5; font-size: 0.84rem;">
+                                        <div>📍 <strong>Shahar / Filial:</strong> Toshkent sh., Chilonzor filiali (Parus yaqini)</div>
+                                        <div>👤 <strong>Qabul qiluvchi:</strong> UzRetro.uz | <strong>Tel:</strong> +998 87 770 02 33</div>
+                                    </div>
+                                    <div class="text-warning small mt-2 pt-2 border-top border-secondary" style="font-size: 0.8rem;">
+                                        👉 <strong>Sizning vazifangiz:</strong> Kassetalarni shu BTS manzilimizga jo'natasiz. Pastdagi maydonga esa <strong>o'zingizning viloyat/shahar va BTS filialingizni</strong> yozing (tayyor bo'lgach orqaga qaytarib yuborishimiz uchun).
+                                    </div>
+                                </div>
+
                                 <div class="input-group">
                                     <span class="input-group-text bg-dark border-secondary text-primary">
                                         <i class="bi bi-pin-map-fill"></i>
                                     </span>
                                     <input type="text" name="address" id="addressInput" class="form-control form-control-dark"
-                                           placeholder="Toshkent sh., tuman, ko'cha, uy yoki lokatsiya havolasi...">
+                                           placeholder="Toshkent sh., tuman, ko'cha, uy yoki Viloyat, tuman va BTS filiali...">
                                 </div>
                                 <div class="form-text text-white-50 small mt-1">
-                                    <i class="bi bi-info-circle me-1"></i> Toshkent shahri yoki viloyat manzilingizni yozing yoki tugma orqali lokatsiyani avtomatik yuboring.
+                                    <i class="bi bi-info-circle me-1"></i> <strong>Toshkentliklar uchun:</strong> ko'cha/uy yoki "Lokatsiyamni aniqlash". <strong>Viloyatdagilar uchun:</strong> viloyat va BTS filiali.
                                 </div>
                             </div>
                             
@@ -285,6 +310,27 @@
                     <p class="text-warning small mb-0">
                         <i class="bi bi-signpost-2"></i> Mo'ljal: Parus binosi
                     </p>
+
+                    <!-- Viloyatlardan BTS pochta kartasi -->
+                    <div class="mt-3 p-3 rounded-3" style="background: rgba(14, 165, 233, 0.12); border: 1.5px solid #0ea5e9;">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="text-info fw-bold small">
+                                <i class="bi bi-box-seam me-1"></i> Viloyatlardan BTS pochta:
+                            </span>
+                            <button type="button" class="btn btn-sm btn-outline-info py-0 px-2 rounded-pill" id="copyBtsBtnSidebar" style="font-size: 0.75rem;">
+                                <i class="bi bi-clipboard me-1"></i> Nusxa olish
+                            </button>
+                        </div>
+                        <div class="small text-white" style="line-height: 1.6; font-size: 0.84rem;">
+                            <div>📍 <strong>Shahar:</strong> Toshkent shahri</div>
+                            <div>🏢 <strong>BTS filiali:</strong> Chilonzor filiali (Parus yaqini)</div>
+                            <div>👤 <strong>Qabul qiluvchi:</strong> UzRetro.uz</div>
+                            <div>📞 <strong>Tel:</strong> +998 87 770 02 33</div>
+                        </div>
+                        <div class="mt-2 pt-2 border-top border-secondary small text-info fw-semibold" style="font-size: 0.78rem;">
+                            <i class="bi bi-truck me-1"></i> Viloyatdan kassetalarni shu BTS manziliga jo'natishingiz mumkin.
+                        </div>
+                    </div>
 
                     <hr class="border-secondary">
 
@@ -436,6 +482,51 @@ if (btnGetLocation && addressInput) {
             },
             { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
         );
+    });
+}
+
+// ====== VILOYATDAN BTS BO'YICHA QULAYLIKLAR ======
+const BTS_TEXT = "Toshkent shahri, BTS Chilonzor filiali (Parus yaqini). Qabul qiluvchi: UzRetro.uz, Tel: +998 87 770 02 33";
+
+function setupCopyButton(btnId) {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(BTS_TEXT).then(() => {
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '✅ Nusxalandi!';
+                btn.classList.replace('btn-outline-info', 'btn-success');
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.classList.replace('btn-success', 'btn-outline-info');
+                }, 2500);
+            });
+        } else {
+            prompt("BTS manzilimiz (nusxa oling):", BTS_TEXT);
+        }
+    });
+}
+
+setupCopyButton('copyBtsBtnSidebar');
+setupCopyButton('copyBtsBtnForm');
+
+const btnBtsQuick = document.getElementById('btnBtsQuick');
+const btsInfoBox = document.getElementById('btsInfoBox');
+if (btnBtsQuick && btsInfoBox && addressInput) {
+    btnBtsQuick.addEventListener('click', () => {
+        const isHidden = btsInfoBox.style.display === 'none';
+        btsInfoBox.style.display = isHidden ? 'block' : 'none';
+        
+        if (isHidden) {
+            btnBtsQuick.classList.replace('btn-outline-warning', 'btn-warning');
+            if (!addressInput.value.trim() || addressInput.value.includes('maps.google')) {
+                addressInput.value = "Viloyatdan BTS orqali: ";
+            }
+            addressInput.focus();
+        } else {
+            btnBtsQuick.classList.replace('btn-warning', 'btn-outline-warning');
+        }
     });
 }
 </script>
