@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, flash, request, jsonify
+from flask import Blueprint, render_template, redirect, url_for, flash, request, jsonify, send_from_directory, current_app
 from models.order import Order
 from extensions import db
 
@@ -75,6 +75,13 @@ def order_status_api(order_id):
         'status': order.status,
         'status_text': badge_text,
         'customer_name': order.customer_name,
-        'service': order.service_name(),
         'created_at': order.created_at.strftime('%d.%m.%Y %H:%M'),
     })
+
+@main.route('/robots.txt')
+def robots():
+    return send_from_directory(current_app.static_folder, 'robots.txt')
+
+@main.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(current_app.static_folder, 'sitemap.xml', mimetype='application/xml')
