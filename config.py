@@ -15,8 +15,8 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     # Telegram Bot
-    TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN') or ''
-    TELEGRAM_ADMIN_CHAT_ID = os.environ.get('TELEGRAM_ADMIN_CHAT_ID') or ''
+    TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN') or '8725031740:AAFLeJpnspbYdQhGDJo-_M8sG2ASiqTf72Q'
+    TELEGRAM_ADMIN_CHAT_ID = os.environ.get('TELEGRAM_ADMIN_CHAT_ID') or '6288837703'
     
     # Biznes ma'lumotlari
     BUSINESS_NAME = "UzRetro.uz"

@@ -7,23 +7,24 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '')
-ADMIN_CHAT_ID = os.getenv('TELEGRAM_ADMIN_CHAT_ID', '')
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN') or '8725031740:AAFLeJpnspbYdQhGDJo-_M8sG2ASiqTf72Q'
+ADMIN_CHAT_ID = os.getenv('TELEGRAM_ADMIN_CHAT_ID') or '6288837703'
 
 
 # ======= SINXRON XABAR YUBORISH =======
 
 def send_telegram_message(text, chat_id=None, parse_mode='HTML'):
     """Telegramga xabar yuborish"""
-    if not TOKEN:
+    bot_token = os.getenv('TELEGRAM_BOT_TOKEN') or TOKEN
+    admin_id = chat_id or os.getenv('TELEGRAM_ADMIN_CHAT_ID') or ADMIN_CHAT_ID
+    if not bot_token:
         print("TELEGRAM_BOT_TOKEN sozlanmagan!")
         return False
-    target = chat_id or ADMIN_CHAT_ID
-    if not target:
+    if not admin_id:
         print("TELEGRAM_ADMIN_CHAT_ID sozlanmagan!")
         return False
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    data = {'chat_id': target, 'text': text, 'parse_mode': parse_mode, 'disable_web_page_preview': True}
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    data = {'chat_id': admin_id, 'text': text, 'parse_mode': parse_mode, 'disable_web_page_preview': True}
     try:
         r = req_lib.post(url, json=data, timeout=10)
         result = r.json()
@@ -38,15 +39,17 @@ def send_telegram_message(text, chat_id=None, parse_mode='HTML'):
 
 def send_new_order_notification(order):
     """Yangi buyurtma kelganda admin'ga xabar"""
+    from datetime import datetime
+    order_time = (order.created_at or datetime.utcnow()).strftime('%d.%m.%Y %H:%M')
     msg = (
-        f"YANGI BUYURTMA #{order.id}\n"
-        f"Ism: {order.customer_name}\n"
-        f"Tel: {order.customer_phone}\n"
-        f"Email: {order.customer_email or 'Yoq'}\n"
-        f"Xizmat: {order.service_name()}\n"
-        f"Miqdor: {order.quantity} ta\n"
-        f"Izoh: {order.description or 'Yoq'}\n"
-        f"Vaqt: {order.created_at.strftime('%d.%m.%Y %H:%M')}"
+        f"🔔 <b>YANGI BUYURTMA #{order.id}</b>\n\n"
+        f"👤 <b>Mijoz:</b> {order.customer_name}\n"
+        f"📞 <b>Telefon:</b> {order.customer_phone}\n"
+        f"📼 <b>Xizmat:</b> {order.service_name()}\n"
+        f"🔢 <b>Miqdor:</b> {order.quantity} ta kasseta\n"
+        f"💬 <b>Izoh/Manzil:</b> {order.description or 'Kiritilmagan'}\n"
+        f"⏰ <b>Sana:</b> {order_time}\n\n"
+        f"📞 <a href='tel:{order.customer_phone}'>Qo'ng'iroq qilish: {order.customer_phone}</a>"
     )
     return send_telegram_message(msg)
 
