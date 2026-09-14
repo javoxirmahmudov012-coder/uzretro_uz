@@ -49,6 +49,7 @@ class Order(db.Model):
             'vhs_to_flash': '📼 VHS → Fleshka',
             'vhs_to_cloud': '☁️ VHS → Cloud',
             'vhs_to_harddisk': '💾 VHS → Hard disk',
+            'minidv_video8': '📹 MiniDV & Video8',
             'harddisk_backup': '🗄️ Hard disk nusxa',
             'photo_scan': '📷 Foto skanerlash',
         }

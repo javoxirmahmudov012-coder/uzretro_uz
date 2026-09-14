@@ -101,7 +101,7 @@ def handle_message(message):
             "- VHS > Fleshka\n"
             "- VHS > Cloud\n"
             "- VHS > Hard disk\n"
-            "- Foto skanerlash\n\n"
+            "- MiniDV & Video8\n\n"
             "Buyurtma: uzretro.uz"
         )
         send_telegram_message(reply, chat_id=chat_id)
