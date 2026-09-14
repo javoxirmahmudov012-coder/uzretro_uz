@@ -903,7 +903,10 @@ body {
     color: #3b82f6;
 }
 
-/* Typography & Sarlavhalar */
+/* Typography & Sarlavhalar (High Contrast & Clear) */
+[data-theme="light"] p {
+    color: #334155;
+}
 [data-theme="light"] .text-white {
     color: #0f172a !important;
 }
@@ -914,18 +917,28 @@ body {
 [data-theme="light"] h5, 
 [data-theme="light"] h6 {
     color: #0f172a;
+    font-weight: 700;
 }
 [data-theme="light"] .text-muted {
-    color: #64748b !important;
+    color: #475569 !important;
 }
 [data-theme="light"] .text-light {
-    color: #334155 !important;
+    color: #1e293b !important;
 }
 [data-theme="light"] .section-title {
     color: #0f172a;
 }
 [data-theme="light"] .section-subtitle {
     color: #475569;
+}
+[data-theme="light"] .service-features li,
+[data-theme="light"] .price-features li {
+    color: #0f172a !important;
+    font-weight: 500;
+}
+[data-theme="light"] .price-section-label {
+    color: #475569 !important;
+    font-weight: 600;
 }
 [data-theme="light"] .border-secondary {
     border-color: #e2e8f0 !important;
