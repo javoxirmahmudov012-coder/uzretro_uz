@@ -84,7 +84,14 @@
                     {% set badge_text, badge_color = order.status_badge() %}
                     <tr>
                         <td><strong class="text-primary fs-6">#{{ order.id }}</strong></td>
-                        <td><span class="fw-bold fs-6">{{ order.customer_name }}</span></td>
+                        <td>
+                            <span class="fw-bold fs-6">{{ order.customer_name }}</span>
+                            {% if order.customer_address %}
+                                <div class="small text-info text-truncate" style="max-width: 170px;" title="{{ order.customer_address }}">
+                                    <i class="bi bi-geo-alt-fill text-danger"></i> {{ order.customer_address }}
+                                </div>
+                            {% endif %}
+                        </td>
                         <td>
                             <a href="tel:{{ order.customer_phone }}" class="btn btn-sm btn-outline-info fw-bold text-nowrap">
                                 <i class="bi bi-telephone-fill me-1"></i>{{ order.customer_phone }}

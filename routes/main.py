@@ -22,6 +22,7 @@ def order():
         name = request.form.get('name', '').strip()
         phone = request.form.get('phone', '').strip()
         email = request.form.get('email', '').strip()
+        address = request.form.get('address', '').strip()
         service = request.form.get('service', '')
         quantity = request.form.get('quantity', 1)
         description = request.form.get('description', '').strip()
@@ -34,6 +35,7 @@ def order():
             customer_name=name,
             customer_phone=phone,
             customer_email=email if email else None,
+            customer_address=address if address else None,
             service_type=service,
             quantity=int(quantity) if quantity else 1,
             description=description if description else None,

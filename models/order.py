@@ -10,6 +10,7 @@ class Order(db.Model):
     customer_name = db.Column(db.String(100), nullable=False)
     customer_phone = db.Column(db.String(20), nullable=False)
     customer_email = db.Column(db.String(120), nullable=True)
+    customer_address = db.Column(db.String(255), nullable=True)
     
     # Xizmat ma'lumotlari
     service_type = db.Column(db.String(50), nullable=False)  

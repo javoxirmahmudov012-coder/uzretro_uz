@@ -59,13 +59,20 @@ def send_new_order_notification(order):
     """Yangi buyurtma kelganda admin'ga xabar"""
     from datetime import datetime
     order_time = (order.created_at or datetime.utcnow()).strftime('%d.%m.%Y %H:%M')
+    address = getattr(order, 'customer_address', None) or 'Kiritilmagan'
+    
+    loc_btn = ""
+    if 'http' in address or 'maps' in address:
+        loc_btn = f"\n🗺️ <a href='{address}'>Xaritada ochish</a>"
+
     msg = (
         f"🔔 <b>YANGI BUYURTMA #{order.id}</b>\n\n"
         f"👤 <b>Mijoz:</b> {order.customer_name}\n"
         f"📞 <b>Telefon:</b> {order.customer_phone}\n"
+        f"📍 <b>Manzil / Lokatsiya:</b> {address}{loc_btn}\n"
         f"📼 <b>Xizmat:</b> {order.service_name()}\n"
         f"🔢 <b>Miqdor:</b> {order.quantity} ta kasseta\n"
-        f"💬 <b>Izoh/Manzil:</b> {order.description or 'Kiritilmagan'}\n"
+        f"💬 <b>Qo'shimcha izoh:</b> {order.description or 'Kiritilmagan'}\n"
         f"⏰ <b>Sana:</b> {order_time}\n\n"
         f"📞 <a href='tel:{order.customer_phone}'>Qo'ng'iroq qilish: {order.customer_phone}</a>"
     )

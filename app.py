@@ -33,6 +33,13 @@ def create_app():
     with app.app_context():
         try:
             db.create_all()
+            with db.engine.connect() as conn:
+                try:
+                    import sqlalchemy as sa
+                    conn.execute(sa.text("ALTER TABLE orders ADD COLUMN customer_address VARCHAR(255)"))
+                    conn.commit()
+                except Exception:
+                    pass
             _create_default_admin(app)
         except Exception as e:
             print(f"DB Init info: {e}")

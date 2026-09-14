@@ -196,6 +196,27 @@
                             </div>
                             
                             <div class="mb-3 mt-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <label class="form-label text-white fw-bold mb-0">
+                                        <i class="bi bi-geo-alt-fill text-danger me-1"></i> Yetkazib berish manzili / Lokatsiya
+                                    </label>
+                                    <button type="button" class="btn btn-outline-info btn-sm py-1 px-2 fw-semibold rounded-pill" id="btnGetLocation" style="font-size: 0.8rem;">
+                                        <i class="bi bi-crosshair me-1"></i> Lokatsiyamni aniqlash
+                                    </button>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-dark border-secondary text-primary">
+                                        <i class="bi bi-pin-map-fill"></i>
+                                    </span>
+                                    <input type="text" name="address" id="addressInput" class="form-control form-control-dark"
+                                           placeholder="Toshkent sh., tuman, ko'cha, uy yoki lokatsiya havolasi...">
+                                </div>
+                                <div class="form-text text-white-50 small mt-1">
+                                    <i class="bi bi-info-circle me-1"></i> Toshkent shahri yoki viloyat manzilingizni yozing yoki tugma orqali lokatsiyani avtomatik yuboring.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3 mt-3">
                                 <label class="form-label text-white">Qo'shimcha izoh</label>
                                 <textarea name="description" class="form-control form-control-dark"
                                           rows="3" placeholder="Kasseta haqida qo'shimcha ma'lumot..."></textarea>
@@ -386,6 +407,36 @@ function updatePriceCalculator() {
     }
     
     document.getElementById('calcFinalPrice').innerHTML = `<span class="fs-5 fw-bold text-success">$${finalPrice}</span> <span class="badge bg-success-subtle text-success fs-6 ms-2 fw-bold">${formatSom(finalPrice)}</span>`;
+}
+
+// ====== AVTOMATIK LOKATSIYANI ANIQLASH ======
+const btnGetLocation = document.getElementById('btnGetLocation');
+const addressInput = document.getElementById('addressInput');
+if (btnGetLocation && addressInput) {
+    btnGetLocation.addEventListener('click', () => {
+        if (!navigator.geolocation) {
+            alert("Brauzeringiz lokatsiyani aniqlashni qo'llab-quvvatlamaydi.");
+            return;
+        }
+        btnGetLocation.disabled = true;
+        btnGetLocation.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Aniqlanmoqda...';
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                addressInput.value = `https://maps.google.com/?q=${lat},${lon}`;
+                btnGetLocation.disabled = false;
+                btnGetLocation.innerHTML = '✅ Lokatsiya olindi';
+                btnGetLocation.classList.replace('btn-outline-info', 'btn-success');
+            },
+            (err) => {
+                btnGetLocation.disabled = false;
+                btnGetLocation.innerHTML = '<i class="bi bi-crosshair me-1"></i> Qayta urinish';
+                alert("Lokatsiyani aniqlashga ruxsat berilmadi yoki xatolik yuz berdi. Iltimos, manzilni qo'lda kiriting.");
+            },
+            { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+        );
+    });
 }
 </script>
 {% endblock %}
