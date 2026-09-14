@@ -8,33 +8,51 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN = os.getenv('TELEGRAM_BOT_TOKEN') or '8725031740:AAFLeJpnspbYdQhGDJo-_M8sG2ASiqTf72Q'
-ADMIN_CHAT_ID = os.getenv('TELEGRAM_ADMIN_CHAT_ID') or '6288837703'
+DEFAULT_ADMIN_IDS = ['6288837703', '8648380244']
 
 
 # ======= SINXRON XABAR YUBORISH =======
 
+def get_admin_chat_ids():
+    """Barcha admin chat ID larini olish"""
+    env_chats = os.getenv('TELEGRAM_ADMIN_CHAT_ID', '')
+    if env_chats:
+        chats = [c.strip() for c in env_chats.split(',') if c.strip()]
+        return chats if chats else DEFAULT_ADMIN_IDS
+    return DEFAULT_ADMIN_IDS
+
+
 def send_telegram_message(text, chat_id=None, parse_mode='HTML'):
-    """Telegramga xabar yuborish"""
+    """Telegramga xabar yuborish (bitta yoki barcha adminlarga)"""
     bot_token = os.getenv('TELEGRAM_BOT_TOKEN') or TOKEN
-    admin_id = chat_id or os.getenv('TELEGRAM_ADMIN_CHAT_ID') or ADMIN_CHAT_ID
     if not bot_token:
         print("TELEGRAM_BOT_TOKEN sozlanmagan!")
         return False
-    if not admin_id:
-        print("TELEGRAM_ADMIN_CHAT_ID sozlanmagan!")
+    
+    if chat_id:
+        targets = [chat_id] if isinstance(chat_id, (str, int)) else list(chat_id)
+    else:
+        targets = get_admin_chat_ids()
+
+    if not targets:
+        print("Admin chat ID lari sozlanmagan!")
         return False
+
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    data = {'chat_id': admin_id, 'text': text, 'parse_mode': parse_mode, 'disable_web_page_preview': True}
-    try:
-        r = req_lib.post(url, json=data, timeout=10)
-        result = r.json()
-        if result.get('ok'):
-            return True
-        print(f"Telegram xato: {result.get('description')}")
-        return False
-    except Exception as e:
-        print(f"Telegram ulanish xatosi: {e}")
-        return False
+    success = False
+    for target in targets:
+        data = {'chat_id': target, 'text': text, 'parse_mode': parse_mode, 'disable_web_page_preview': True}
+        try:
+            r = req_lib.post(url, json=data, timeout=10)
+            res = r.json()
+            if res.get('ok'):
+                success = True
+            else:
+                print(f"Telegram xatosi ({target}): {res.get('description')}")
+        except Exception as e:
+            print(f"Telegram ulanish xatosi ({target}): {e}")
+            
+    return success
 
 
 def send_new_order_notification(order):
