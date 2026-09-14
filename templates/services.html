@@ -10,6 +10,18 @@
     </div>
 </div>
 
+<!-- To'lov va Qoidalar kafolati -->
+<div class="container my-4" data-aos="fade-up">
+    <div class="p-3 px-4 rounded-4 text-center" style="background: rgba(16, 185, 129, 0.12); border: 1.5px solid #10b981;">
+        <span class="fw-bold text-success fs-5 d-block mb-1">
+            <i class="bi bi-shield-check me-2"></i> To'lov faqat ish to'liq bajarilgandan so'ng!
+        </span>
+        <p class="text-body-secondary small mb-0">
+            Oldindan hech qanday to'lov olinmaydi. Barcha ishlar to'liq bajarilib, siz natijani qabul qilib olganingizdan keyin to'lov qilasiz. Hard disk mijozdan, disklar esa faqat $30 lik tarifdan boshlanadi.
+        </p>
+    </div>
+</div>
+
 <section class="section-dark py-6">
     <div class="container">
         
@@ -61,12 +73,15 @@
             </div>
 
             <!-- VHS → Hard Disk -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-card p-4 h-100 d-flex flex-column">
                     <div class="service-detail-icon mb-3" style="color: #ffc107;">
                         <i class="bi bi-hdd"></i>
                     </div>
-                    <h3 class="text-white fw-bold mb-3">VHS → Hard Disk</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="text-white fw-bold mb-0">VHS → Hard Disk</h3>
+                        <span class="badge bg-warning-subtle text-warning fw-bold fs-7">Hard mijozdan</span>
+                    </div>
                     <p class="text-muted mb-4">
                         Ko'p kasseta bo'lsa? Hard diskka to'liq arxivlaymiz.
                         Ko'p sonli kasseta uchun eng qulay variant.
@@ -74,8 +89,33 @@
                     <ul class="service-features mb-4 mt-auto">
                         <li><i class="bi bi-check-circle text-success"></i> 10+ kasseta uchun ideal</li>
                         <li><i class="bi bi-check-circle text-success"></i> Papkalarga tartiblab saqlanadi</li>
-                        <li><i class="bi bi-check-circle text-success"></i> External HDD ga yoki SSD ga</li>
+                        <li><i class="bi bi-exclamation-circle text-warning"></i> <strong>Tashqi Hard disk mijoz tomonidan beriladi</strong></li>
                         <li><i class="bi bi-check-circle text-success"></i> Backup nusxa ham olinadi</li>
+                    </ul>
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
+                        Buyurtma berish <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DVD / CD Disklar -->
+            <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card p-4 h-100 d-flex flex-column">
+                    <div class="service-detail-icon mb-3" style="color: #00d4ff;">
+                        <i class="bi bi-disc"></i>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="text-white fw-bold mb-0">DVD / CD Disklar</h3>
+                        <span class="badge bg-info-subtle text-info fw-bold fs-7">30$ lik tarifdan</span>
+                    </div>
+                    <p class="text-muted mb-4">
+                        Eski DVD va CD disklardagi videolarni fleshkaga ko'chirish yoki kassetalaringizni sifatli DVD diskka yozib berish xizmati.
+                    </p>
+                    <ul class="service-features mb-4 mt-auto">
+                        <li><i class="bi bi-check-circle text-success"></i> Disklarni fleshkaga ko'chirish</li>
+                        <li><i class="bi bi-check-circle text-success"></i> Kassetalarni diskka yozib berish</li>
+                        <li><i class="bi bi-star-fill text-warning"></i> <strong>Faqat $30 (Standart) va undan yuqori tarifda</strong></li>
+                        <li><i class="bi bi-check-circle text-success"></i> Sifatli MP4 va DVD formatda</li>
                     </ul>
                     <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
                         Buyurtma berish <i class="bi bi-arrow-right"></i>

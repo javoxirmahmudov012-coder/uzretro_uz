@@ -47,11 +47,10 @@ class Order(db.Model):
     def service_name(self):
         names = {
             'vhs_to_flash': '📼 VHS → Fleshka',
-            'vhs_to_cloud': '☁️ VHS → Cloud',
-            'vhs_to_harddisk': '💾 VHS → Hard disk',
             'minidv_video8': '📹 MiniDV & Video8',
+            'vhs_to_harddisk': '💾 VHS → Hard disk (mijozdan)',
+            'dvd_disk': '💿 DVD / CD Disklar ($30+)',
             'harddisk_backup': '🗄️ Hard disk nusxa',
-            'photo_scan': '📷 Foto skanerlash',
         }
         return names.get(self.service_type, self.service_type)
     

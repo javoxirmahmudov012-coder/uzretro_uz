@@ -53,30 +53,43 @@
                             </h5>
                             
                             <div class="row g-3 mb-3">
-                                <div class="col-md-4 col-6">
+                                <div class="col-md-3 col-6">
                                     <label class="service-option">
                                         <input type="radio" name="service" value="vhs_to_flash" required>
-                                        <div class="service-option-content">
+                                        <div class="service-option-content text-center">
                                             <i class="bi bi-usb-drive"></i>
-                                            <span>VHS → Fleshka</span>
+                                            <span class="d-block fw-bold">VHS → Fleshka</span>
+                                            <small class="text-muted" style="font-size:0.75rem;">Fleshkaga ko'chirish</small>
                                         </div>
                                     </label>
                                 </div>
-                                <div class="col-md-4 col-6">
+                                <div class="col-md-3 col-6">
                                     <label class="service-option">
                                         <input type="radio" name="service" value="minidv_video8">
-                                        <div class="service-option-content">
+                                        <div class="service-option-content text-center">
                                             <i class="bi bi-camera-video"></i>
-                                            <span>MiniDV & Video8</span>
+                                            <span class="d-block fw-bold">MiniDV & Video8</span>
+                                            <small class="text-muted" style="font-size:0.75rem;">Kamera kassetalari</small>
                                         </div>
                                     </label>
                                 </div>
-                                <div class="col-md-4 col-12">
+                                <div class="col-md-3 col-6">
                                     <label class="service-option">
                                         <input type="radio" name="service" value="vhs_to_harddisk">
-                                        <div class="service-option-content">
-                                            <i class="bi bi-hdd"></i>
-                                            <span>VHS → Hard disk</span>
+                                        <div class="service-option-content text-center">
+                                            <i class="bi bi-hdd text-warning"></i>
+                                            <span class="d-block fw-bold">VHS → Hard disk</span>
+                                            <small class="text-warning fw-semibold" style="font-size:0.73rem;">Hard mijozdan</small>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <label class="service-option">
+                                        <input type="radio" name="service" value="dvd_disk">
+                                        <div class="service-option-content text-center">
+                                            <i class="bi bi-disc text-info"></i>
+                                            <span class="d-block fw-bold">DVD / CD Disklar</span>
+                                            <small class="text-info fw-semibold" style="font-size:0.73rem;">30$ lik tarifdan</small>
                                         </div>
                                     </label>
                                 </div>
@@ -95,7 +108,7 @@
                                         <input type="radio" name="tariff" value="start" data-price="20">
                                         <div class="tariff-option-content">
                                             <i class="bi bi-play-circle" style="font-size:1.3rem; color:#007bff;"></i>
-                                            <span class="tariff-name">Start</span>
+                                            <span class="tariff-name">Start <small class="text-muted">(Fleshka/Hard mijozdan • Disksiz)</small></span>
                                             <span class="tariff-price">$20 <span class="small opacity-75 fw-normal">(240 000 so'm)</span></span>
                                         </div>
                                     </label>
@@ -105,7 +118,7 @@
                                         <input type="radio" name="tariff" value="standart" data-price="30">
                                         <div class="tariff-option-content">
                                             <i class="bi bi-star" style="font-size:1.3rem; color:#ffc107;"></i>
-                                            <span class="tariff-name">Standart <small class="text-muted">(tozalash + 8GB flash)</small></span>
+                                            <span class="tariff-name">Standart <small class="text-muted">(tozalash + 8GB flash yoki DVD disk)</small></span>
                                             <span class="tariff-price">$30 <span class="small opacity-75 fw-normal">(360 000 so'm)</span></span>
                                         </div>
                                     </label>
@@ -115,7 +128,7 @@
                                         <input type="radio" name="tariff" value="pro" data-price="50">
                                         <div class="tariff-option-content" style="border-color: rgba(0,123,255,0.3);">
                                             <i class="bi bi-lightning-charge-fill" style="font-size:1.3rem; color:#00d4ff;"></i>
-                                            <span class="tariff-name">PRO <small class="text-muted">(QR + YouTube link)</small></span>
+                                            <span class="tariff-name">PRO <small class="text-muted">(QR + YouTube link + DVD/Fleshka)</small></span>
                                             <span class="tariff-price">$50 <span class="small opacity-75 fw-normal">(600 000 so'm)</span></span>
                                         </div>
                                     </label>
@@ -125,7 +138,7 @@
                                         <input type="radio" name="tariff" value="vip" data-price="100">
                                         <div class="tariff-option-content">
                                             <i class="bi bi-gem" style="font-size:1.3rem; color:#ff6b6b;"></i>
-                                            <span class="tariff-name">VIP <small class="text-muted">(16GB + maxsus rolik)</small></span>
+                                            <span class="tariff-name">VIP <small class="text-muted">(16GB + rolik + maxsus DVD/HDD)</small></span>
                                             <span class="tariff-price">$100 <span class="small opacity-75 fw-normal">(1 200 000 so'm)</span></span>
                                         </div>
                                     </label>
@@ -188,6 +201,27 @@
                             </div>
                         </div>
                         
+                        <!-- To'lov va Qoidalar kafolati -->
+                        <div class="p-3 mb-3 rounded-3" style="background: rgba(16, 185, 129, 0.12); border: 1.5px solid #10b981;">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-shield-check text-success fs-2 flex-shrink-0"></i>
+                                <div>
+                                    <div class="fw-bold text-success fs-6 mb-1">To'lov faqat ish to'liq bajarilgandan so'ng!</div>
+                                    <div class="small text-body-secondary">
+                                        Oldindan to'lov talab qilinmaydi. Kassetalaringiz to'liq raqamlashtirilib, natijani ko'rib ishonch hosil qilganingizdan keyin to'lov qilasiz.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Muhim eslatmalar -->
+                        <div class="p-3 mb-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border: 1px dashed rgba(56, 189, 248, 0.35);">
+                            <ul class="list-unstyled mb-0 small text-body-secondary">
+                                <li class="mb-2"><i class="bi bi-hdd text-warning me-2"></i><strong>Hard diskka ko'chirish:</strong> Tashqi Hard disk (HDD/SSD) mijoz tomonidan taqdim etiladi.</li>
+                                <li><i class="bi bi-disc text-info me-2"></i><strong>DVD / CD Disklar:</strong> Disklar bilan ishlash faqat <strong>$30 lik (Standart)</strong> va undan yuqori tariflarda taqdim etiladi.</li>
+                            </ul>
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary btn-lg w-100 btn-glow">
                             <i class="bi bi-send"></i> Buyurtmani yuborish
                         </button>
@@ -231,6 +265,15 @@
                     </p>
 
                     <hr class="border-secondary">
+
+                    <div class="p-3 mb-3 rounded" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3);">
+                        <div class="text-success fw-bold small mb-2"><i class="bi bi-shield-check me-1"></i> Xizmat shartlari:</div>
+                        <ul class="list-unstyled text-body-secondary small mb-0 ps-1" style="font-size: 0.83rem; line-height: 1.6;">
+                            <li>• <strong class="text-success">To'lov:</strong> Ish to'liq bitgandan keyin</li>
+                            <li>• <strong class="text-warning">Hard disk:</strong> Mijoz tomonidan beriladi</li>
+                            <li>• <strong class="text-info">Disklar:</strong> Faqat $30+ tarifda</li>
+                        </ul>
+                    </div>
 
                     <div class="p-2 mb-3 mt-2 rounded" style="background: rgba(40, 167, 69, 0.1); border: 1px dashed rgba(40, 167, 69, 0.4);">
                         <div class="text-success fw-bold small mb-1"><i class="bi bi-gift-fill me-1"></i> Hajmga qarab chegirmalar:</div>
