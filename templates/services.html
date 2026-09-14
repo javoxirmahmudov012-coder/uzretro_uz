@@ -25,99 +25,103 @@
 <section class="section-dark py-6">
     <div class="container">
         
-        <div class="row g-4 justify-content-center">
+        <div class="row g-3 g-lg-4 justify-content-center">
             
             <!-- VHS → Fleshka -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                <div class="service-card p-4 h-100 d-flex flex-column">
-                    <div class="service-detail-icon mb-3">
-                        <i class="bi bi-usb-drive"></i>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="0">
+                <div class="service-card p-3 p-lg-4 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="service-detail-icon mb-0">
+                            <i class="bi bi-usb-drive"></i>
+                        </div>
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle fw-bold" style="font-size: 0.72rem;">Eng mashhur</span>
                     </div>
-                    <h3 class="text-white fw-bold mb-3">VHS → Fleshka</h3>
-                    <p class="text-muted mb-4">
-                        Eng mashhur xizmatimiz. VHS, S-VHS, Betamax kasseta videolaringizni
-                        USB flash diskka yuqori sifatda raqamlashtiramiz.
+                    <h4 class="text-white fw-bold mb-2 service-card-title">VHS → Fleshka</h4>
+                    <p class="text-muted small mb-3 flex-shrink-0" style="font-size: 0.85rem;">
+                        VHS, S-VHS, Betamax kasseta videolaringizni USB flash diskka yuqori sifatda raqamlashtiramiz.
                     </p>
-                    <ul class="service-features mb-4 mt-auto">
-                        <li><i class="bi bi-check-circle text-success"></i> Full HD sifatda yozish</li>
-                        <li><i class="bi bi-check-circle text-success"></i> MP4 formatda</li>
-                        <li><i class="bi bi-check-circle text-success"></i> 1-2 kun ichida</li>
-                        <li><i class="bi bi-check-circle text-success"></i> Fleshkangizga yoki biznikiga</li>
+                    <ul class="service-features mb-3 mt-auto">
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Full HD sifatda yozish</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> MP4 formatda</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> 1-2 kun ichida</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Fleshkangizga / biznikiga</li>
                     </ul>
-                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary w-100 py-2 fw-bold rounded-3 mt-2 btn-service-order">
                         Buyurtma berish <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- MiniDV & Video8 → Fleshka -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-card p-4 h-100 d-flex flex-column">
-                    <div class="service-detail-icon mb-3" style="color: #17a2b8;">
-                        <i class="bi bi-camera-video"></i>
+            <!-- MiniDV & Video8 -->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card p-3 p-lg-4 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="service-detail-icon mb-0" style="color: #17a2b8; background: rgba(23, 162, 184, 0.12);">
+                            <i class="bi bi-camera-video"></i>
+                        </div>
+                        <span class="badge bg-info-subtle text-info border border-info-subtle fw-bold" style="font-size: 0.72rem;">Kamera kassetasi</span>
                     </div>
-                    <h3 class="text-white fw-bold mb-3">MiniDV & Video8</h3>
-                    <p class="text-muted mb-4">
+                    <h4 class="text-white fw-bold mb-2 service-card-title">MiniDV & Video8</h4>
+                    <p class="text-muted small mb-3 flex-shrink-0" style="font-size: 0.85rem;">
                         Kichik videokamera kassetalari (VHS-C, Video8, Hi8, MiniDV)ni sifatli fleshkaga o'tkazib beramiz.
                     </p>
-                    <ul class="service-features mb-4 mt-auto">
-                        <li><i class="bi bi-check-circle text-success"></i> Full HD sifatda yozish</li>
-                        <li><i class="bi bi-check-circle text-success"></i> MP4 formatda</li>
-                        <li><i class="bi bi-check-circle text-success"></i> 100% maxfiylik kafolati</li>
-                        <li><i class="bi bi-check-circle text-success"></i> Fleshka yoki Hard diskka</li>
+                    <ul class="service-features mb-3 mt-auto">
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Full HD sifatda yozish</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> MP4 formatda</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> 100% maxfiylik kafolati</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Fleshka yoki Hard diskka</li>
                     </ul>
-                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary w-100 py-2 fw-bold rounded-3 mt-2 btn-service-order">
                         Buyurtma berish <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
             <!-- VHS → Hard Disk -->
-            <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-card p-4 h-100 d-flex flex-column">
-                    <div class="service-detail-icon mb-3" style="color: #ffc107;">
-                        <i class="bi bi-hdd"></i>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card p-3 p-lg-4 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="service-detail-icon mb-0" style="color: #ffc107; background: rgba(255, 193, 7, 0.12);">
+                            <i class="bi bi-hdd"></i>
+                        </div>
+                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle fw-bold" style="font-size: 0.72rem;">Hard mijozdan</span>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h3 class="text-white fw-bold mb-0">VHS → Hard Disk</h3>
-                        <span class="badge bg-warning-subtle text-warning fw-bold fs-7">Hard mijozdan</span>
-                    </div>
-                    <p class="text-muted mb-4">
-                        Ko'p kasseta bo'lsa? Hard diskka to'liq arxivlaymiz.
-                        Ko'p sonli kasseta uchun eng qulay variant.
+                    <h4 class="text-white fw-bold mb-2 service-card-title">VHS → Hard Disk</h4>
+                    <p class="text-muted small mb-3 flex-shrink-0" style="font-size: 0.85rem;">
+                        Ko'p kasseta bo'lsa? Hard diskka to'liq arxivlaymiz. Ko'p sonli kasseta uchun eng qulay variant.
                     </p>
-                    <ul class="service-features mb-4 mt-auto">
-                        <li><i class="bi bi-check-circle text-success"></i> 10+ kasseta uchun ideal</li>
-                        <li><i class="bi bi-check-circle text-success"></i> Papkalarga tartiblab saqlanadi</li>
-                        <li><i class="bi bi-exclamation-circle text-warning"></i> <strong>Tashqi Hard disk mijoz tomonidan beriladi</strong></li>
-                        <li><i class="bi bi-check-circle text-success"></i> Backup nusxa ham olinadi</li>
+                    <ul class="service-features mb-3 mt-auto">
+                        <li><i class="bi bi-check-circle-fill text-success"></i> 10+ kasseta uchun ideal</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Papkalarga tartiblab saqlanadi</li>
+                        <li><i class="bi bi-exclamation-circle-fill text-warning"></i> <strong>Hard disk mijozdan</strong></li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Backup nusxa ham olinadi</li>
                     </ul>
-                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary w-100 py-2 fw-bold rounded-3 mt-2 btn-service-order">
                         Buyurtma berish <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
             <!-- DVD / CD Disklar -->
-            <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-card p-4 h-100 d-flex flex-column">
-                    <div class="service-detail-icon mb-3" style="color: #00d4ff;">
-                        <i class="bi bi-disc"></i>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card p-3 p-lg-4 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <div class="service-detail-icon mb-0" style="color: #00d4ff; background: rgba(0, 212, 255, 0.12);">
+                            <i class="bi bi-disc"></i>
+                        </div>
+                        <span class="badge bg-info-subtle text-info border border-info-subtle fw-bold" style="font-size: 0.72rem;">30$ lik tarifdan</span>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h3 class="text-white fw-bold mb-0">DVD / CD Disklar</h3>
-                        <span class="badge bg-info-subtle text-info fw-bold fs-7">30$ lik tarifdan</span>
-                    </div>
-                    <p class="text-muted mb-4">
-                        Eski DVD va CD disklardagi videolarni fleshkaga ko'chirish yoki kassetalaringizni sifatli DVD diskka yozib berish xizmati.
+                    <h4 class="text-white fw-bold mb-2 service-card-title">DVD / CD Disklar</h4>
+                    <p class="text-muted small mb-3 flex-shrink-0" style="font-size: 0.85rem;">
+                        Eski DVD va CD disklarni fleshkaga ko'chirish yoki kassetalarni DVD diskka yozib berish xizmati.
                     </p>
-                    <ul class="service-features mb-4 mt-auto">
-                        <li><i class="bi bi-check-circle text-success"></i> Disklarni fleshkaga ko'chirish</li>
-                        <li><i class="bi bi-check-circle text-success"></i> Kassetalarni diskka yozib berish</li>
-                        <li><i class="bi bi-star-fill text-warning"></i> <strong>Faqat $30 (Standart) va undan yuqori tarifda</strong></li>
-                        <li><i class="bi bi-check-circle text-success"></i> Sifatli MP4 va DVD formatda</li>
+                    <ul class="service-features mb-3 mt-auto">
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Disklarni fleshkaga ko'chirish</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Kassetalarni diskka yozish</li>
+                        <li><i class="bi bi-star-fill text-warning"></i> <strong>Faqat $30+ tarifda mavjud</strong></li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Sifatli MP4 va DVD formatda</li>
                     </ul>
-                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary w-100 py-2 fw-bold rounded-3 mt-2 btn-service-order">
                         Buyurtma berish <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
@@ -212,22 +216,76 @@
 
 {% block extra_head %}
 <style>
-.service-detail-icon { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
-.service-features { list-style: none; padding: 0; }
+/* Service Cards Compact & Modern Styles */
+.service-detail-icon { 
+    width: 46px; 
+    height: 46px; 
+    border-radius: 12px; 
+    background: rgba(0, 123, 255, 0.12); 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.45rem; 
+    color: var(--primary); 
+}
+.service-card-title {
+    font-size: 1.22rem;
+}
+.service-features { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
 .service-features li { 
-    padding: 10px 0; 
+    padding: 4px 0; 
     color: #e2e8f0; 
-    font-size: 1.05rem;
+    font-size: 0.88rem;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 .service-features li i { 
-    margin-right: 12px; 
-    font-size: 1.15rem;
+    font-size: 0.95rem;
+    flex-shrink: 0;
 }
+
 /* Light Mode for Services Page - High Contrast */
 [data-theme="light"] .service-features li {
     color: #0f172a !important;
     font-weight: 600;
+}
+
+/* Mobile Friendly Compact Responsive Tweak */
+@media (max-width: 767.98px) {
+    .service-card {
+        padding: 16px 14px !important;
+        border-radius: 14px !important;
+    }
+    .service-detail-icon {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1.2rem !important;
+    }
+    .service-card-title {
+        font-size: 1.1rem !important;
+    }
+    .service-card p {
+        font-size: 0.82rem !important;
+        margin-bottom: 8px !important;
+        line-height: 1.4 !important;
+    }
+    .service-features li {
+        padding: 2.5px 0 !important;
+        font-size: 0.82rem !important;
+    }
+    .service-features li i {
+        font-size: 0.85rem !important;
+    }
+    .btn-service-order {
+        padding: 8px 12px !important;
+        font-size: 0.88rem !important;
+    }
 }
 
 /* FAQ Styles */
