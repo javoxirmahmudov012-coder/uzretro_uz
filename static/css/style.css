@@ -336,6 +336,56 @@ body {
     border-color: #27272a !important;
 }
 
+/* Footer Social Buttons - Aniq va Chiroyli */
+.footer-social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+.footer-social-btn:hover {
+    transform: translateY(-2px);
+}
+.footer-btn-instagram {
+    background: rgba(225, 48, 108, 0.18) !important;
+    border-color: rgba(225, 48, 108, 0.45) !important;
+    color: #ff6584 !important;
+}
+.footer-btn-instagram:hover {
+    background: #e1306c !important;
+    color: #ffffff !important;
+    border-color: #e1306c !important;
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+}
+.footer-btn-telegram {
+    background: rgba(0, 136, 204, 0.18) !important;
+    border-color: rgba(0, 136, 204, 0.45) !important;
+    color: #38bdf8 !important;
+}
+.footer-btn-telegram:hover {
+    background: #0088cc !important;
+    color: #ffffff !important;
+    border-color: #0088cc !important;
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+}
+.footer-btn-channel {
+    background: rgba(0, 212, 255, 0.18) !important;
+    border-color: rgba(0, 212, 255, 0.45) !important;
+    color: #00d4ff !important;
+}
+.footer-btn-channel:hover {
+    background: #00bcd4 !important;
+    color: #ffffff !important;
+    border-color: #00bcd4 !important;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
 
 /* -------- ENHANCED ANIMATIONS -------- */
 
