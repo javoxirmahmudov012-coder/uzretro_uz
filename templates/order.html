@@ -90,20 +90,103 @@
                                     </label>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Tarif tanlash -->
+                        <div class="form-section mb-4">
+                            <h5 class="form-section-title">
+                                <i class="bi bi-tag text-primary"></i> Tarif tanlang
+                            </h5>
                             
+                            <div class="row g-3 mb-3">
+                                <div class="col-12">
+                                    <label class="tariff-option">
+                                        <input type="radio" name="tariff" value="start" data-price="20">
+                                        <div class="tariff-option-content">
+                                            <i class="bi bi-play-circle" style="font-size:1.3rem; color:#007bff;"></i>
+                                            <span class="tariff-name">Start</span>
+                                            <span class="tariff-price">$20</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <label class="tariff-option">
+                                        <input type="radio" name="tariff" value="standart" data-price="30">
+                                        <div class="tariff-option-content">
+                                            <i class="bi bi-star" style="font-size:1.3rem; color:#ffc107;"></i>
+                                            <span class="tariff-name">Standart <small class="text-muted">(tozalash + 8GB flash)</small></span>
+                                            <span class="tariff-price">$30</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <label class="tariff-option">
+                                        <input type="radio" name="tariff" value="pro" data-price="50">
+                                        <div class="tariff-option-content" style="border-color: rgba(0,123,255,0.3);">
+                                            <i class="bi bi-lightning-charge-fill" style="font-size:1.3rem; color:#00d4ff;"></i>
+                                            <span class="tariff-name">PRO <small class="text-muted">(QR + YouTube link)</small></span>
+                                            <span class="tariff-price">$50</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <label class="tariff-option">
+                                        <input type="radio" name="tariff" value="vip" data-price="100">
+                                        <div class="tariff-option-content">
+                                            <i class="bi bi-gem" style="font-size:1.3rem; color:#ff6b6b;"></i>
+                                            <span class="tariff-name">VIP <small class="text-muted">(16GB + maxsus rolik)</small></span>
+                                            <span class="tariff-price">$100</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kasseta soni va izoh -->
+                        <div class="form-section mb-4">
+                            <h5 class="form-section-title">
+                                <i class="bi bi-collection text-primary"></i> Miqdor
+                            </h5>
+
                             <div class="mb-3">
                                 <label class="form-label text-white">
                                     Kasseta soni <span class="text-danger">*</span>
                                 </label>
-                                <select name="quantity" class="form-select form-control-dark">
+                                <select name="quantity" id="quantitySelect" class="form-select form-control-dark">
                                     {% for i in range(1, 20) %}
                                     <option value="{{ i }}">{{ i }} ta kasseta</option>
                                     {% endfor %}
                                     <option value="20">20+ ta (ko'p)</option>
                                 </select>
                             </div>
+
+                            <!-- Narx kalkulyator -->
+                            <div class="price-calculator" id="priceCalculator" style="display: none;">
+                                <h6><i class="bi bi-calculator text-primary me-2"></i>Narx kalkulyatori</h6>
+                                <div class="price-row">
+                                    <span class="label" id="calcTariffLabel">Tarif:</span>
+                                    <span class="value" id="calcTariffValue">—</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="label">Miqdor:</span>
+                                    <span class="value" id="calcQuantity">—</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="label">Umumiy narx:</span>
+                                    <span class="value" id="calcOriginalPrice">—</span>
+                                </div>
+                                <div class="price-row discount" id="calcDiscountRow" style="display: none;">
+                                    <span class="label">Chegirma:</span>
+                                    <span class="value" id="calcDiscount">—</span>
+                                </div>
+                                <div class="price-row total">
+                                    <span class="label">💰 Yakuniy narx:</span>
+                                    <span class="value" id="calcFinalPrice">—</span>
+                                </div>
+                                <div class="price-savings" id="calcSavings" style="display: none;"></div>
+                            </div>
                             
-                            <div class="mb-3">
+                            <div class="mb-3 mt-3">
                                 <label class="form-label text-white">Qo'shimcha izoh</label>
                                 <textarea name="description" class="form-control form-control-dark"
                                           rows="3" placeholder="Kasseta haqida qo'shimcha ma'lumot..."></textarea>
@@ -153,14 +236,6 @@
                     </p>
 
                     <hr class="border-secondary">
-                    
-                    <h6 class="text-white mb-3"><i class="bi bi-tag text-primary"></i> Tariflar (1 ta kasseta uchun)</h6>
-                    <ul class="list-unstyled text-muted small mb-2">
-                        <li>🔹 <strong>Start:</strong> $20 (ko'chirish)</li>
-                        <li>🔹 <strong>Standart:</strong> $30 (tozalash + 8GB flash)</li>
-                        <li>🔹 <strong>PRO:</strong> $50 (QR + YouTube link)</li>
-                        <li>🔹 <strong>VIP:</strong> $100 (16GB + maxsus rolik)</li>
-                    </ul>
 
                     <div class="p-2 mb-3 mt-2 rounded" style="background: rgba(40, 167, 69, 0.1); border: 1px dashed rgba(40, 167, 69, 0.4);">
                         <div class="text-success fw-bold small mb-1"><i class="bi bi-gift-fill me-1"></i> Hajmga qarab chegirmalar:</div>
@@ -183,7 +258,7 @@
 
 {% block extra_scripts %}
 <script>
-// Xizmat tanlaganda animatsiya
+// ====== XIZMAT TANLASH ANIMATSIYASI ======
 document.querySelectorAll('.service-option input').forEach(input => {
     input.addEventListener('change', function() {
         document.querySelectorAll('.service-option-content').forEach(c => c.classList.remove('selected'));
@@ -192,5 +267,79 @@ document.querySelectorAll('.service-option input').forEach(input => {
         }
     });
 });
+
+// ====== TARIF TANLASH ANIMATSIYASI ======
+document.querySelectorAll('.tariff-option input').forEach(input => {
+    input.addEventListener('change', function() {
+        document.querySelectorAll('.tariff-option-content').forEach(c => c.classList.remove('selected'));
+        if (this.checked) {
+            this.nextElementSibling.classList.add('selected');
+        }
+        updatePriceCalculator();
+    });
+});
+
+// ====== NARX KALKULYATOR ======
+const tariffNames = {
+    'start': 'Start',
+    'standart': 'Standart',
+    'pro': 'PRO',
+    'vip': 'VIP'
+};
+
+const quantitySelect = document.getElementById('quantitySelect');
+if (quantitySelect) {
+    quantitySelect.addEventListener('change', updatePriceCalculator);
+}
+
+function getDiscountPercent(qty) {
+    if (qty >= 8) return 20;
+    if (qty >= 5) return 15;
+    if (qty >= 3) return 10;
+    return 0;
+}
+
+function updatePriceCalculator() {
+    const selectedTariff = document.querySelector('.tariff-option input:checked');
+    const quantity = parseInt(quantitySelect.value) || 1;
+    const calculator = document.getElementById('priceCalculator');
+    
+    if (!selectedTariff) {
+        calculator.style.display = 'none';
+        return;
+    }
+    
+    const price = parseInt(selectedTariff.dataset.price);
+    const tariffName = tariffNames[selectedTariff.value] || selectedTariff.value;
+    const originalTotal = price * quantity;
+    const discountPercent = getDiscountPercent(quantity);
+    const discountAmount = Math.round(originalTotal * discountPercent / 100);
+    const finalPrice = originalTotal - discountAmount;
+    
+    // Show calculator
+    calculator.style.display = 'block';
+    calculator.classList.add('has-price');
+    
+    // Update values
+    document.getElementById('calcTariffValue').textContent = tariffName + ' ($' + price + '/kasseta)';
+    document.getElementById('calcQuantity').textContent = quantity + ' ta kasseta';
+    document.getElementById('calcOriginalPrice').textContent = '$' + originalTotal;
+    
+    // Discount
+    const discountRow = document.getElementById('calcDiscountRow');
+    const savingsDiv = document.getElementById('calcSavings');
+    
+    if (discountPercent > 0) {
+        discountRow.style.display = 'flex';
+        document.getElementById('calcDiscount').textContent = '-' + discountPercent + '% (-$' + discountAmount + ')';
+        savingsDiv.style.display = 'block';
+        savingsDiv.innerHTML = '<i class="bi bi-gift-fill me-1"></i> Siz $' + discountAmount + ' tejaysiz!';
+    } else {
+        discountRow.style.display = 'none';
+        savingsDiv.style.display = 'none';
+    }
+    
+    document.getElementById('calcFinalPrice').textContent = '$' + finalPrice;
+}
 </script>
 {% endblock %}

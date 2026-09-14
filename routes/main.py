@@ -74,6 +74,7 @@ def order_status_api(order_id):
         'id': order.id,
         'status': order.status,
         'status_text': badge_text,
+        'service': order.service_name(),
         'customer_name': order.customer_name,
         'created_at': order.created_at.strftime('%d.%m.%Y %H:%M'),
     })
