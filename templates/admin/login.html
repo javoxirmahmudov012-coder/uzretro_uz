@@ -1,46 +1,132 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="uz" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login — UzRetro.uz</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('uzretro-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    
     <style>
-        body { background: #0a0a0a; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; }
-        .login-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 40px; width: 100%; max-width: 420px; }
-        .form-control { background: #111; border: 1px solid #333; color: #fff; }
-        .form-control:focus { background: #111; border-color: #007bff; color: #fff; box-shadow: 0 0 0 0.25rem rgba(0,123,255,.15); }
+        :root {
+            --bg-body: #0b0f19;
+            --bg-card: #151e2e;
+            --border-color: #26354d;
+            --text-title: #ffffff;
+            --text-sub: #cbd5e1;
+            --input-bg: #0d1422;
+            --input-border: #2b3b55;
+            --input-text: #ffffff;
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        [data-theme="light"] {
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --text-title: #0f172a;
+            --text-sub: #475569;
+            --input-bg: #ffffff;
+            --input-border: #cbd5e1;
+            --input-text: #0f172a;
+            --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        body { 
+            background: var(--bg-body); 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            transition: background 0.25s ease;
+        }
+        .login-card { 
+            background: var(--bg-card); 
+            border: 1px solid var(--border-color); 
+            border-radius: 20px; 
+            padding: 40px 35px; 
+            width: 100%; 
+            max-width: 420px; 
+            box-shadow: var(--shadow-card);
+        }
+        .brand-title {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-title);
+        }
+        .form-label {
+            color: var(--text-title);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .form-control { 
+            background: var(--input-bg); 
+            border: 1.5px solid var(--input-border); 
+            color: var(--input-text); 
+            font-weight: 600;
+            padding: 12px 16px;
+            border-radius: 12px;
+        }
+        .form-control:focus { 
+            background: var(--input-bg); 
+            border-color: #38bdf8; 
+            color: var(--input-text); 
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2); 
+        }
+        .btn-login {
+            font-weight: 700;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
     <div class="login-card text-center">
         <div class="mb-4">
-            <h3 style="color:#007bff; font-weight:800;">UZRETRO<span style="color:#fff;">.UZ</span></h3>
-            <p class="text-muted">Admin Panel</p>
+            <div class="fs-1 mb-2">⚙️</div>
+            <h3 class="brand-title mb-1">
+                UZRETRO<span style="color:#007bff;">.UZ</span>
+            </h3>
+            <p class="fw-bold text-muted small text-uppercase" style="letter-spacing: 1px;">Admin Boshqaruv Paneli</p>
         </div>
         
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}{% for category, message in messages %}
-                <div class="alert alert-{{ category }} mb-3">{{ message }}</div>
+                <div class="alert alert-{{ category }} fw-bold mb-3">{{ message }}</div>
             {% endfor %}{% endif %}
         {% endwith %}
         
         <form method="POST">
             <div class="mb-3 text-start">
-                <label class="form-label text-white">Login</label>
+                <label class="form-label">Admin Login</label>
                 <input type="text" name="username" class="form-control" placeholder="admin" required autofocus>
             </div>
             <div class="mb-4 text-start">
-                <label class="form-label text-white">Parol</label>
-                <input type="password" name="password" class="form-control" required>
+                <label class="form-label">Parol</label>
+                <input type="password" name="password" class="form-control" placeholder="••••••••" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">
-                🔐 Kirish
+            <button type="submit" class="btn btn-primary btn-login w-100 shadow-sm">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Tizimga kirish
             </button>
         </form>
         
-        <p class="text-muted mt-4 small">© 2024 UzRetro.uz</p>
+        <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top border-secondary border-opacity-25">
+            <a href="{{ url_for('main.index') }}" class="text-decoration-none fw-bold small text-primary">
+                ← Saytga qaytish
+            </a>
+            <span class="text-muted fw-semibold small">UzRetro © 2024</span>
+        </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
