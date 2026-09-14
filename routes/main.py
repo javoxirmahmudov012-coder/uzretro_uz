@@ -23,6 +23,7 @@ def order():
         phone = request.form.get('phone', '').strip()
         telegram = request.form.get('telegram', '').strip() or request.form.get('telegram_username', '').strip()
         address = request.form.get('address', '').strip()
+        payment_method = request.form.get('payment_method', 'card')
         service = request.form.get('service', '')
         quantity = request.form.get('quantity', 1)
         description = request.form.get('description', '').strip()
@@ -40,6 +41,7 @@ def order():
             customer_telegram=telegram if telegram else None,
             customer_email=telegram if telegram else None,
             customer_address=address if address else None,
+            payment_method=payment_method,
             service_type=service,
             quantity=int(quantity) if quantity else 1,
             description=description if description else None,

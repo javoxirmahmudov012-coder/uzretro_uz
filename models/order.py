@@ -24,9 +24,10 @@ class Order(db.Model):
     status = db.Column(db.String(30), default='new')
     # new, accepted, processing, ready, delivered, cancelled
     
-    # Narx
+    # Narx va to'lov
     price = db.Column(db.Float, nullable=True)
     is_paid = db.Column(db.Boolean, default=False)
+    payment_method = db.Column(db.String(50), default='card')  # card, cash, bank
     
     # Vaqt
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
@@ -55,6 +56,14 @@ class Order(db.Model):
             'harddisk_backup': '🗄️ Hard disk nusxa',
         }
         return names.get(self.service_type, self.service_type)
+    
+    def payment_method_name(self):
+        methods = {
+            'card': '💳 Karta orqali (Click / Payme / Uzum)',
+            'cash': '💵 Naqd pul (Topshirilganda)',
+            'bank': '🏦 Bank o\'tkazmasi (Hisob raqam)',
+        }
+        return methods.get(self.payment_method, self.payment_method or 'Ko\'rsatilmagan')
     
     def __repr__(self):
         return f'<Order #{self.id} - {self.customer_name}>'

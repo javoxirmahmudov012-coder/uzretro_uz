@@ -71,6 +71,8 @@ def send_new_order_notification(order):
         clean_user = tg_user.lstrip('@')
         tg_line = f"✈️ <b>Telegram:</b> @{clean_user} (<a href='https://t.me/{clean_user}'>Yozish</a>)\n"
 
+    pay_method = order.payment_method_name() if hasattr(order, 'payment_method_name') else 'Karta orqali'
+
     msg = (
         f"🔔 <b>YANGI BUYURTMA #{order.id}</b>\n\n"
         f"👤 <b>Mijoz:</b> {order.customer_name}\n"
@@ -79,6 +81,7 @@ def send_new_order_notification(order):
         f"📍 <b>Manzil / Lokatsiya:</b> {address}{loc_btn}\n"
         f"📼 <b>Xizmat:</b> {order.service_name()}\n"
         f"🔢 <b>Miqdor:</b> {order.quantity} ta kasseta\n"
+        f"💳 <b>To'lov turi:</b> {pay_method}\n"
         f"💬 <b>Qo'shimcha izoh:</b> {order.description or 'Kiritilmagan'}\n"
         f"⏰ <b>Sana:</b> {order_time}\n\n"
         f"📞 <a href='tel:{order.customer_phone}'>Qo'ng'iroq qilish: {order.customer_phone}</a>"

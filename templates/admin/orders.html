@@ -105,7 +105,10 @@
                                 </div>
                             {% endif %}
                         </td>
-                        <td><span class="fw-semibold">{{ order.service_name() }}</span></td>
+                        <td>
+                            <span class="fw-semibold">{{ order.service_name() }}</span>
+                            <div class="small text-muted" style="font-size: 0.76rem;">{{ order.payment_method_name() }}</div>
+                        </td>
                         <td><span class="badge bg-secondary-subtle text-secondary-emphasis fw-bold px-2 py-1 fs-6">{{ order.quantity }} ta</span></td>
                         <td><span class="badge bg-{{ badge_color }} fw-bold px-3 py-2 rounded-pill fs-7">{{ badge_text }}</span></td>
                         <td>

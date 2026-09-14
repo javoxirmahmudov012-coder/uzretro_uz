@@ -334,6 +334,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 .service-option-content.selected i { color: var(--primary); }
 
+/* -------- PAYMENT OPTIONS -------- */
+.payment-option {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0;
+}
+.payment-option input {
+    display: none;
+}
+.payment-option-content {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 12px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+.payment-option-content:hover {
+    border-color: rgba(0,123,255,0.4);
+    transform: translateY(-2px);
+}
+.payment-option-content.selected {
+    border-color: var(--primary) !important;
+    background: rgba(0,123,255,0.12) !important;
+    box-shadow: 0 0 16px rgba(0,123,255,0.22);
+}
+[data-theme="light"] .payment-option-content {
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+[data-theme="light"] .payment-option-content:hover {
+    border-color: #007bff;
+}
+[data-theme="light"] .payment-option-content.selected {
+    border-color: #007bff !important;
+    background: rgba(0,123,255,0.08) !important;
+}
+
 .info-sidebar {
     background: var(--bg-card2);
     border: 1px solid var(--border);

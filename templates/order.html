@@ -121,7 +121,7 @@
                                         <input type="radio" name="tariff" value="start" data-price="20">
                                         <div class="tariff-option-content">
                                             <i class="bi bi-play-circle" style="font-size:1.3rem; color:#007bff;"></i>
-                                            <span class="tariff-name">Start <small class="text-muted">(Fleshka/Hard mijozdan • Disksiz)</small></span>
+                                            <span class="tariff-name">Start <small class="text-muted">(Bez montaj • Fleshka mijozdan)</small></span>
                                             <span class="tariff-price">$20 <span class="small opacity-75 fw-normal">(240 000 so'm / kasseta)</span></span>
                                         </div>
                                     </label>
@@ -252,6 +252,45 @@
                                 </div>
                             </div>
                             
+                            <!-- To'lov turi -->
+                            <div class="mb-4 mt-3">
+                                <label class="form-label text-white fw-bold mb-2">
+                                    <i class="bi bi-credit-card-2-front text-primary me-1"></i> To'lov turi (usuli)
+                                </label>
+                                <div class="row g-2">
+                                    <div class="col-md-4 col-12">
+                                        <label class="payment-option">
+                                            <input type="radio" name="payment_method" value="card" checked>
+                                            <div class="payment-option-content text-center selected">
+                                                <i class="bi bi-credit-card fs-4 text-primary d-block mb-1"></i>
+                                                <span class="fw-bold d-block text-white">Karta orqali</span>
+                                                <small class="text-white-50" style="font-size:0.75rem;">Click / Payme / Uzum</small>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="payment-option">
+                                            <input type="radio" name="payment_method" value="cash">
+                                            <div class="payment-option-content text-center">
+                                                <i class="bi bi-cash-stack fs-4 text-success d-block mb-1"></i>
+                                                <span class="fw-bold d-block text-white">Naqd pul</span>
+                                                <small class="text-white-50" style="font-size:0.75rem;">Topshirilganda to'lash</small>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="payment-option">
+                                            <input type="radio" name="payment_method" value="bank">
+                                            <div class="payment-option-content text-center">
+                                                <i class="bi bi-bank fs-4 text-warning d-block mb-1"></i>
+                                                <span class="fw-bold d-block text-white">Hisob raqam</span>
+                                                <small class="text-white-50" style="font-size:0.75rem;">Bank orqali o'tkazma</small>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="mb-3 mt-3">
                                 <label class="form-label text-white">Qo'shimcha izoh</label>
                                 <textarea name="description" class="form-control form-control-dark"
@@ -275,6 +314,7 @@
                         <!-- Muhim eslatmalar -->
                         <div class="p-3 mb-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border: 1px dashed rgba(56, 189, 248, 0.35);">
                             <ul class="list-unstyled mb-0 terms-banner-list">
+                                <li class="mb-2"><i class="bi bi-play-circle text-primary me-2"></i><strong>$20 (Start) tarifi:</strong> Kasseta qanday bo'lsa shunday holatda (bez montaj) ko'chirib beriladi, fleshka esa mijoz tomonidan taqdim etiladi.</li>
                                 <li class="mb-2"><i class="bi bi-hdd text-warning me-2"></i><strong>Hard diskka ko'chirish:</strong> Tashqi Hard disk (HDD/SSD) mijoz tomonidan taqdim etiladi.</li>
                                 <li class="mb-2"><i class="bi bi-disc text-info me-2"></i><strong>DVD / CD Disklar:</strong> Disklar bilan ishlash faqat <strong>$30 lik (Standart)</strong> va undan yuqori tariflarda taqdim etiladi.</li>
                                 <li><i class="bi bi-camera-video text-warning me-2"></i><strong>Kichik kassetalar (MiniDV, Video8, Hi8):</strong> Faqat <strong>$50 lik (PRO)</strong> va undan yuqori tariflarda qabul qilinadi.</li>
@@ -351,6 +391,7 @@
                         <div class="text-success fw-bold small mb-2"><i class="bi bi-shield-check me-1"></i> Xizmat shartlari:</div>
                         <ul class="list-unstyled text-white fw-semibold small mb-0 ps-1" style="font-size: 0.85rem; line-height: 1.6;">
                             <li>• <strong class="text-success">To'lov:</strong> Ish to'liq bitgandan keyin</li>
+                            <li>• <strong class="text-primary">$20 Start:</strong> Bez montaj, fleshka mijozdan</li>
                             <li>• <strong class="text-warning">Hard disk:</strong> Mijoz tomonidan beriladi</li>
                             <li>• <strong class="text-info">Disklar:</strong> Faqat $30+ tarifda</li>
                             <li>• <strong class="text-warning">Kichik kassetalar:</strong> Faqat $50+ tarifda</li>
@@ -396,6 +437,16 @@ document.querySelectorAll('.tariff-option input').forEach(input => {
             this.nextElementSibling.classList.add('selected');
         }
         updatePriceCalculator();
+    });
+});
+
+// ====== TO'LOV TURI TANLASH ANIMATSIYASI ======
+document.querySelectorAll('.payment-option input').forEach(input => {
+    input.addEventListener('change', function() {
+        document.querySelectorAll('.payment-option-content').forEach(c => c.classList.remove('selected'));
+        if (this.checked) {
+            this.nextElementSibling.classList.add('selected');
+        }
     });
 });
 

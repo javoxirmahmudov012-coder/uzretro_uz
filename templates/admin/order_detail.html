@@ -70,6 +70,10 @@
                                 <td><strong class="fs-5 text-warning">{{ order.quantity }} dona</strong></td>
                             </tr>
                             <tr>
+                                <td class="text-body-secondary fw-bold">To'lov turi:</td>
+                                <td><span class="badge bg-secondary-subtle text-secondary-emphasis fw-bold fs-6 px-3 py-2">{{ order.payment_method_name() }}</span></td>
+                            </tr>
+                            <tr>
                                 <td class="text-body-secondary fw-bold">Manzil / Lokatsiya:</td>
                                 <td>
                                     {% if order.customer_address %}
