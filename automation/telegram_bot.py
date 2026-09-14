@@ -87,7 +87,7 @@ def handle_message(message):
             f"Assalomu alaykum, {first_name}!\n\n"
             f"UzRetro.uz botiga xush kelibsiz!\n\n"
             f"VHS kasseta, betamax va boshqa eski videolaringizni\n"
-            f"fleshka, cloud yoki hard diskka o'tkazamiz.\n\n"
+            f"fleshka yoki hard diskka 100% maxfiy o'tkazamiz.\n\n"
             f"Buyurtma: uzretro.uz\n"
             f"Yordam: /help"
         )
@@ -99,9 +99,8 @@ def handle_message(message):
         reply = (
             "Xizmatlarimiz:\n"
             "- VHS > Fleshka\n"
-            "- VHS > Cloud\n"
-            "- VHS > Hard disk\n"
-            "- MiniDV & Video8\n\n"
+            "- MiniDV & Video8\n"
+            "- VHS > Hard disk\n\n"
             "Buyurtma: uzretro.uz"
         )
         send_telegram_message(reply, chat_id=chat_id)
