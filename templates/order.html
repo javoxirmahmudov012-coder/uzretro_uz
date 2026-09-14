@@ -279,6 +279,23 @@
                                         </label>
                                     </div>
                                 </div>
+                                
+                                <div id="paymentNoteCard" class="payment-note mt-2 p-3 rounded-3" style="background: rgba(14, 165, 233, 0.1); border: 1.5px solid rgba(14, 165, 233, 0.35);">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-info-circle-fill text-info fs-5 mt-1 flex-shrink-0"></i>
+                                        <span class="text-white small">
+                                            <strong>Karta orqali to'lov:</strong> To'lov kartasi (Click / Payme) kassetalaringiz to'liq raqamlashtirilib, video sifatini ko'rib tasdiqlaganingizdan so'ng Telegramingizga yuboriladi. <strong>Hozir oldindan to'lov shart emas!</strong>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="paymentNoteCash" class="payment-note mt-2 p-3 rounded-3" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1.5px solid rgba(16, 185, 129, 0.35);">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-cash-stack text-success fs-5 mt-1 flex-shrink-0"></i>
+                                        <span class="text-white small">
+                                            <strong>Naqd pulda to'lov:</strong> To'lov kassetalaringiz to'liq tayyor bo'lib, o'zingizga yoki kuryerga topshirilayotgan paytda naqd shaklda qabul qilinadi.
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="mb-3 mt-3">
@@ -431,11 +448,21 @@ document.querySelectorAll('.tariff-option input').forEach(input => {
 });
 
 // ====== TO'LOV TURI TANLASH ANIMATSIYASI ======
+const paymentNoteCard = document.getElementById('paymentNoteCard');
+const paymentNoteCash = document.getElementById('paymentNoteCash');
+
 document.querySelectorAll('.payment-option input').forEach(input => {
     input.addEventListener('change', function() {
         document.querySelectorAll('.payment-option-content').forEach(c => c.classList.remove('selected'));
         if (this.checked) {
             this.nextElementSibling.classList.add('selected');
+            if (this.value === 'card') {
+                if (paymentNoteCard) paymentNoteCard.style.display = 'block';
+                if (paymentNoteCash) paymentNoteCash.style.display = 'none';
+            } else if (this.value === 'cash') {
+                if (paymentNoteCard) paymentNoteCard.style.display = 'none';
+                if (paymentNoteCash) paymentNoteCash.style.display = 'block';
+            }
         }
     });
 });
