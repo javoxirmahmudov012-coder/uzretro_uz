@@ -214,18 +214,21 @@
                                 <div id="btsInfoBox" class="p-3 mb-2 rounded-3" style="display: none; background: rgba(14, 165, 233, 0.12); border: 1.5px solid #0ea5e9;">
                                     <div class="d-flex justify-content-between align-items-start mb-2">
                                         <div class="fw-bold text-info small">
-                                            <i class="bi bi-box-seam-fill me-1"></i> Viloyatdan jo'natuvchilar uchun bizning BTS manzilimiz:
+                                            <i class="bi bi-box-seam-fill me-1"></i> Viloyatdan jo'natuvchilar uchun BTS manzilimiz:
                                         </div>
                                         <button type="button" class="btn btn-sm btn-outline-info py-0 px-2 rounded-pill" id="copyBtsBtnForm" style="font-size: 0.75rem;">
                                             <i class="bi bi-clipboard me-1"></i> Nusxa olish
                                         </button>
                                     </div>
-                                    <div class="small text-white" style="line-height: 1.5; font-size: 0.84rem;">
-                                        <div>📍 <strong>Shahar / Filial:</strong> Toshkent sh., Chilonzor filiali (Parus yaqini)</div>
-                                        <div>👤 <strong>Qabul qiluvchi:</strong> UzRetro.uz | <strong>Tel:</strong> +998 87 770 02 33</div>
+                                    <div class="small text-white" style="line-height: 1.6; font-size: 0.85rem;">
+                                        <div>🏢 <strong>Filial:</strong> BTS "Qatortol" filiali</div>
+                                        <div>📍 <strong>Manzil:</strong> Toshkent shahri, Chilonzor tumani, Qatortol 1-tor ko'chasi</div>
+                                        <div>🎯 <strong>Mo'ljal:</strong> Parus savdo markazi</div>
+                                        <div>📞 <strong>BTS filial tel:</strong> <a href="tel:+998935052843" class="text-info fw-bold">+998 93 505 28 43</a> | <strong>Call-markaz:</strong> 1230</div>
+                                        <div>👤 <strong>Qabul qiluvchi:</strong> UzRetro.uz (Tel: +998 87 770 02 33)</div>
                                     </div>
                                     <div class="text-warning small mt-2 pt-2 border-top border-secondary" style="font-size: 0.8rem;">
-                                        👉 <strong>Sizning vazifangiz:</strong> Kassetalarni shu BTS manzilimizga jo'natasiz. Pastdagi maydonga esa <strong>o'zingizning viloyat/shahar va BTS filialingizni</strong> yozing (tayyor bo'lgach orqaga qaytarib yuborishimiz uchun).
+                                        👉 <strong>Sizning vazifangiz:</strong> Kassetalarni shu BTS "Qatortol" filialiga jo'natasiz. Pastdagi maydonga esa <strong>o'zingizning viloyat/shahar va BTS filialingizni</strong> yozing (tayyor bo'lgach orqaga qaytarib yuborishimiz uchun).
                                     </div>
                                 </div>
 
@@ -322,10 +325,11 @@
                             </button>
                         </div>
                         <div class="small text-white" style="line-height: 1.6; font-size: 0.84rem;">
-                            <div>📍 <strong>Shahar:</strong> Toshkent shahri</div>
-                            <div>🏢 <strong>BTS filiali:</strong> Chilonzor filiali (Parus yaqini)</div>
-                            <div>👤 <strong>Qabul qiluvchi:</strong> UzRetro.uz</div>
-                            <div>📞 <strong>Tel:</strong> +998 87 770 02 33</div>
+                            <div>🏢 <strong>Filial:</strong> BTS "Qatortol" filiali</div>
+                            <div>📍 <strong>Manzil:</strong> Toshkent sh., Chilonzor tumani, Qatortol 1-tor ko'chasi</div>
+                            <div>🎯 <strong>Mo'ljal:</strong> Parus savdo markazi</div>
+                            <div>📞 <strong>BTS filial:</strong> <a href="tel:+998935052843" class="text-info fw-bold">+998 93 505 28 43</a></div>
+                            <div>👤 <strong>Qabul qiluvchi:</strong> UzRetro.uz (+998 87 770 02 33)</div>
                         </div>
                         <div class="mt-2 pt-2 border-top border-secondary small text-info fw-semibold" style="font-size: 0.78rem;">
                             <i class="bi bi-truck me-1"></i> Viloyatdan kassetalarni shu BTS manziliga jo'natishingiz mumkin.
@@ -486,7 +490,7 @@ if (btnGetLocation && addressInput) {
 }
 
 // ====== VILOYATDAN BTS BO'YICHA QULAYLIKLAR ======
-const BTS_TEXT = "Toshkent shahri, BTS Chilonzor filiali (Parus yaqini). Qabul qiluvchi: UzRetro.uz, Tel: +998 87 770 02 33";
+const BTS_TEXT = "BTS 'Qatortol' filiali. Manzil: Toshkent sh., Chilonzor tumani, Qatortol 1-tor ko'chasi. Mo'ljal: Parus savdo markazi. BTS filial: +998 93 505 28 43. Qabul qiluvchi: UzRetro.uz (Tel: +998 87 770 02 33)";
 
 function setupCopyButton(btnId) {
     const btn = document.getElementById(btnId);
