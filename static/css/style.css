@@ -1065,7 +1065,6 @@ body {
 [data-theme="light"] .price-card,
 [data-theme="light"] .contact-card-row,
 [data-theme="light"] .directions-box,
-[data-theme="light"] .service-visual,
 [data-theme="light"] .faq-item {
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;

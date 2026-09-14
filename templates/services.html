@@ -13,95 +13,77 @@
 <section class="section-dark py-6">
     <div class="container">
         
-        <!-- VHS → Fleshka -->
-        <div class="row align-items-center mb-6">
-            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                <div class="service-detail-icon" data-aos="zoom-in">
-                    <i class="bi bi-usb-drive"></i>
-                </div>
-                <h2 class="text-white">VHS → Fleshka</h2>
-                <p class="text-white">
-                    Eng mashhur xizmatimiz. VHS, S-VHS, Betamax kasseta videolaringizni
-                    USB flash diskka yuqori sifatda raqamlashtiramiz.
-                </p>
-                <ul class="service-features">
-                    <li><i class="bi bi-check-circle text-success"></i> Full HD sifatda yozish</li>
-                    <li><i class="bi bi-check-circle text-success"></i> MP4 formatda</li>
-                    <li><i class="bi bi-check-circle text-success"></i> 1-2 kun ichida</li>
-                    <li><i class="bi bi-check-circle text-success"></i> Fleshkangizga yoki biznikiga</li>
-                </ul>
-                <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg mt-3">
-                    Buyurtma berish <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <div class="service-visual">
-                    <div class="service-visual-icon">📼 → 💾</div>
-                    <p class="text-white">VHS kasseta → USB Fleshka</p>
+        <div class="row g-4 justify-content-center">
+            
+            <!-- VHS → Fleshka -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="service-card p-4 h-100 d-flex flex-column">
+                    <div class="service-detail-icon mb-3">
+                        <i class="bi bi-usb-drive"></i>
+                    </div>
+                    <h3 class="text-white fw-bold mb-3">VHS → Fleshka</h3>
+                    <p class="text-muted mb-4">
+                        Eng mashhur xizmatimiz. VHS, S-VHS, Betamax kasseta videolaringizni
+                        USB flash diskka yuqori sifatda raqamlashtiramiz.
+                    </p>
+                    <ul class="service-features mb-4 mt-auto">
+                        <li><i class="bi bi-check-circle text-success"></i> Full HD sifatda yozish</li>
+                        <li><i class="bi bi-check-circle text-success"></i> MP4 formatda</li>
+                        <li><i class="bi bi-check-circle text-success"></i> 1-2 kun ichida</li>
+                        <li><i class="bi bi-check-circle text-success"></i> Fleshkangizga yoki biznikiga</li>
+                    </ul>
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
+                        Buyurtma berish <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-        
-        <hr class="border-secondary my-5">
-        
-        <!-- VHS → Cloud -->
-        <div class="row align-items-center mb-6 flex-lg-row-reverse">
-            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-left">
-                <div class="service-detail-icon" data-aos="zoom-in" style="color: #17a2b8;">
-                    <i class="bi bi-cloud-upload"></i>
-                </div>
-                <h2 class="text-white">VHS → Cloud</h2>
-                <p class="text-white">
-                    Videolaringizni Google Drive, Yandex Disk yoki boshqa bulut xizmatiga
-                    yuklaymiz. Internet orqali istalgan joydan ko'ring!
-                </p>
-                <ul class="service-features">
-                    <li><i class="bi bi-check-circle text-success"></i> Google Drive / Yandex Disk</li>
-                    <li><i class="bi bi-check-circle text-success"></i> Abadiy saqlash imkoniyati</li>
-                    <li><i class="bi bi-check-circle text-success"></i> Oila bilan ulashing</li>
-                    <li><i class="bi bi-check-circle text-success"></i> Mobil qurilmadan ko'ring</li>
-                </ul>
-                <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg mt-3">
-                    Buyurtma berish <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-lg-6" data-aos="fade-right">
-                <div class="service-visual">
-                    <div class="service-visual-icon">📼 → ☁️</div>
-                    <p class="text-white">VHS kasseta → Cloud Storage</p>
+
+            <!-- VHS → Cloud -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card p-4 h-100 d-flex flex-column">
+                    <div class="service-detail-icon mb-3" style="color: #17a2b8;">
+                        <i class="bi bi-cloud-upload"></i>
+                    </div>
+                    <h3 class="text-white fw-bold mb-3">VHS → Cloud</h3>
+                    <p class="text-muted mb-4">
+                        Videolaringizni Google Drive, Yandex Disk yoki boshqa bulut xizmatiga
+                        yuklaymiz. Internet orqali istalgan joydan ko'ring!
+                    </p>
+                    <ul class="service-features mb-4 mt-auto">
+                        <li><i class="bi bi-check-circle text-success"></i> Google Drive / Yandex Disk</li>
+                        <li><i class="bi bi-check-circle text-success"></i> Abadiy saqlash imkoniyati</li>
+                        <li><i class="bi bi-check-circle text-success"></i> Oila bilan ulashing</li>
+                        <li><i class="bi bi-check-circle text-success"></i> Mobil qurilmadan ko'ring</li>
+                    </ul>
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
+                        Buyurtma berish <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-        
-        <hr class="border-secondary my-5">
-        
-        <!-- Hard Disk -->
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                <div class="service-detail-icon" data-aos="zoom-in" style="color: #ffc107;">
-                    <i class="bi bi-hdd"></i>
-                </div>
-                <h2 class="text-white">VHS → Hard Disk</h2>
-                <p class="text-white">
-                    Ko'p kasseta bo'lsa? Hard diskka to'liq arxivlaymiz.
-                    Ko'p sonli kasseta uchun eng qulay variant.
-                </p>
-                <ul class="service-features">
-                    <li><i class="bi bi-check-circle text-success"></i> 10+ kasseta uchun ideal</li>
-                    <li><i class="bi bi-check-circle text-success"></i> Papkalarga tartiblab saqlanadi</li>
-                    <li><i class="bi bi-check-circle text-success"></i> External HDD ga yoki SSD ga</li>
-                    <li><i class="bi bi-check-circle text-success"></i> Backup nusxa ham olinadi</li>
-                </ul>
-                <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg mt-3">
-                    Buyurtma berish <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <div class="service-visual">
-                    <div class="service-visual-icon">📼 → 🗄️</div>
-                    <p class="text-white">VHS kasseta → Hard Disk</p>
+
+            <!-- VHS → Hard Disk -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card p-4 h-100 d-flex flex-column">
+                    <div class="service-detail-icon mb-3" style="color: #ffc107;">
+                        <i class="bi bi-hdd"></i>
+                    </div>
+                    <h3 class="text-white fw-bold mb-3">VHS → Hard Disk</h3>
+                    <p class="text-muted mb-4">
+                        Ko'p kasseta bo'lsa? Hard diskka to'liq arxivlaymiz.
+                        Ko'p sonli kasseta uchun eng qulay variant.
+                    </p>
+                    <ul class="service-features mb-4 mt-auto">
+                        <li><i class="bi bi-check-circle text-success"></i> 10+ kasseta uchun ideal</li>
+                        <li><i class="bi bi-check-circle text-success"></i> Papkalarga tartiblab saqlanadi</li>
+                        <li><i class="bi bi-check-circle text-success"></i> External HDD ga yoki SSD ga</li>
+                        <li><i class="bi bi-check-circle text-success"></i> Backup nusxa ham olinadi</li>
+                    </ul>
+                    <a href="{{ url_for('main.order') }}" class="btn btn-primary btn-lg w-100 mt-2">
+                        Buyurtma berish <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
+
         </div>
         
     </div>
@@ -203,29 +185,10 @@
     margin-right: 12px; 
     font-size: 1.15rem;
 }
-.service-visual {
-    background: #111;
-    border: 1px solid #2a2a2a;
-    border-radius: 20px;
-    padding: 60px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-.service-visual-icon { font-size: 4rem; margin-bottom: 15px; }
-
 /* Light Mode for Services Page - High Contrast */
 [data-theme="light"] .service-features li {
     color: #0f172a !important;
     font-weight: 600;
-}
-[data-theme="light"] .service-visual {
-    background: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-[data-theme="light"] .service-visual p {
-    color: #0f172a !important;
-    font-weight: 700;
 }
 
 /* FAQ Styles */
