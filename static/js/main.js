@@ -171,4 +171,40 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = scrollPercent + '%';
 }, { passive: true });
 
+// ====== KUNDUZGI / KECHKI REJIM (THEME SWITCHER) ======
+function updateThemeUI(theme) {
+    const themeToggleText = document.getElementById('themeToggleText');
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    if (themeToggleText) {
+        themeToggleText.textContent = theme === 'light' ? 'Kunduzgi' : 'Kechki';
+    }
+    if (themeToggleBtn) {
+        themeToggleBtn.setAttribute('title', theme === 'light' ? "Kechki rejimga o'tish" : "Kunduzgi rejimga o'tish");
+    }
+}
+
+function initTheme() {
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    updateThemeUI(currentTheme);
+    
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('uzretro-theme', newTheme);
+            updateThemeUI(newTheme);
+        });
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+} else {
+    initTheme();
+}
+
 console.log('🚀 UzRetro.uz loaded with animations!');
+

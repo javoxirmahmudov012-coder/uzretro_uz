@@ -4,200 +4,105 @@
 {% block content %}
 <div class="page-header py-5 mt-5">
     <div class="container text-center">
-        <h1 class="text-white">🎞️ Galereya</h1>
-        <p class="text-muted">Qayta tiklangan xotiralar — oldin va keyin</p>
+        <h1 class="page-title text-white">🎞️ Galereya</h1>
+        <p class="text-muted">Raqamlashtirish jarayoni va qo'llab-quvvatlanadigan formatlar</p>
     </div>
 </div>
 
-<!-- Before / After Showcase -->
+<!-- Formatlar va Jarayon -->
 <section class="section-dark py-6">
     <div class="container">
         <div class="section-header text-center mb-5">
-            <span class="section-badge">Natijalarimiz</span>
-            <h2 class="section-title">Oldin va Keyin</h2>
-            <p class="section-subtitle">Har bir kasseta — qayta tiklangan xotira</p>
+            <span class="section-badge">Formatlar</span>
+            <h2 class="section-title">Biz qabul qiladigan kassetalar</h2>
+            <p class="section-subtitle">Har qanday yildagi va har qanday holatdagi kassetalarni qabul qilamiz</p>
         </div>
         
         <div class="row g-4">
-            <!-- Card 1: VHS → Fleshka -->
+            <!-- Format 1 -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                <div class="gallery-card">
-                    <div class="gallery-before-after">
-                        <div class="gallery-before">
-                            <div class="gallery-icon-large" style="color: #ff6b6b;">📼</div>
-                            <span class="text-muted small">Eski VHS kasseta</span>
-                            <span style="font-size:0.75rem; color:#666;">Buzilgan, chirigan lenta</span>
-                        </div>
-                        <div class="arrow-divider">
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                        <div class="gallery-after">
-                            <div class="gallery-icon-large" style="color: #00d4ff;">💾</div>
-                            <span class="text-muted small">USB Fleshka</span>
-                            <span style="font-size:0.75rem; color:#5cb85c;">HD sifatda tayyor!</span>
-                        </div>
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-cassette"></i>
                     </div>
-                    <div class="gallery-card-body">
-                        <h5>Oilaviy to'y videosi (1998)</h5>
-                        <p>25 yillik to'y videosi USB fleshkaga ko'chirildi</p>
-                        <div class="gallery-stats">
-                            <div class="gallery-stat"><i class="bi bi-clock"></i> 2 soat video</div>
-                            <div class="gallery-stat"><i class="bi bi-hdd"></i> 4.2 GB</div>
-                            <div class="gallery-stat"><i class="bi bi-check-circle"></i> HD</div>
-                        </div>
-                    </div>
+                    <h5>VHS & S-VHS kassetalar</h5>
+                    <p>Eng keng tarqalgan katta video kassetalar (to'y, bayram, arxivlar). Fleshka va Cloud'ga yuqori sifatda o'tkazamiz.</p>
+                    <span class="service-badge popular">Eng ko'p buyurtma</span>
                 </div>
             </div>
-            
-            <!-- Card 2: Buzilgan → Tiklangan -->
+
+            <!-- Format 2 -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="gallery-card">
-                    <div class="gallery-before-after">
-                        <div class="gallery-before">
-                            <div class="gallery-icon-large" style="color: #ff6b6b;">🔇</div>
-                            <span class="text-muted small">Ovozi yo'qolgan</span>
-                            <span style="font-size:0.75rem; color:#666;">Rangi o'chgan video</span>
-                        </div>
-                        <div class="arrow-divider">
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                        <div class="gallery-after">
-                            <div class="gallery-icon-large" style="color: #00d4ff;">🔊</div>
-                            <span class="text-muted small">Tozalangan</span>
-                            <span style="font-size:0.75rem; color:#5cb85c;">Ovoz tiklandi!</span>
-                        </div>
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-camera-video"></i>
                     </div>
-                    <div class="gallery-card-body">
-                        <h5>Bolalar tug'ilgan kuni (2001)</h5>
-                        <p>Ovozi buzilgan video tozalanib, qayta tiklandi</p>
-                        <div class="gallery-stats">
-                            <div class="gallery-stat"><i class="bi bi-clock"></i> 45 daqiqa</div>
-                            <div class="gallery-stat"><i class="bi bi-hdd"></i> 1.8 GB</div>
-                            <div class="gallery-stat"><i class="bi bi-music-note"></i> Ovoz+</div>
-                        </div>
-                    </div>
+                    <h5>VHS-C va Video8 / Hi8</h5>
+                    <p>Kichik videokamera kassetalari. Ranglarini to'g'rilab, tasvir va ovozini tozalab beramiz.</p>
+                    <span class="service-badge">Videokamera</span>
                 </div>
             </div>
-            
-            <!-- Card 3: Betamax → Cloud -->
+
+            <!-- Format 3 -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="gallery-card">
-                    <div class="gallery-before-after">
-                        <div class="gallery-before">
-                            <div class="gallery-icon-large" style="color: #ff6b6b;">📹</div>
-                            <span class="text-muted small">Betamax kasseta</span>
-                            <span style="font-size:0.75rem; color:#666;">30 yillik arxiv</span>
-                        </div>
-                        <div class="arrow-divider">
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                        <div class="gallery-after">
-                            <div class="gallery-icon-large" style="color: #00d4ff;">☁️</div>
-                            <span class="text-muted small">Google Drive</span>
-                            <span style="font-size:0.75rem; color:#5cb85c;">Cloud'da xavfsiz!</span>
-                        </div>
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-disc"></i>
                     </div>
-                    <div class="gallery-card-body">
-                        <h5>Oilaviy arxiv (1993-1998)</h5>
-                        <p>5 ta Betamax kasseta Google Drive'ga yuklandi</p>
-                        <div class="gallery-stats">
-                            <div class="gallery-stat"><i class="bi bi-collection"></i> 5 kasseta</div>
-                            <div class="gallery-stat"><i class="bi bi-hdd"></i> 12 GB</div>
-                            <div class="gallery-stat"><i class="bi bi-cloud-check"></i> Cloud</div>
-                        </div>
-                    </div>
+                    <h5>MiniDV & Digital8</h5>
+                    <p>Raqamli kassetalarni to'liq raqamli sifatini yo'qotmasdan MP4 va Full HD formatga aylantirib beramiz.</p>
+                    <span class="service-badge">Full HD</span>
                 </div>
             </div>
-            
-            <!-- Card 4: Foto skanerlash -->
+
+            <!-- Format 4 -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="gallery-card">
-                    <div class="gallery-before-after">
-                        <div class="gallery-before">
-                            <div class="gallery-icon-large" style="color: #ff6b6b;">🖼️</div>
-                            <span class="text-muted small">Eski fotosurat</span>
-                            <span style="font-size:0.75rem; color:#666;">Sariq, yirtilib ketgan</span>
-                        </div>
-                        <div class="arrow-divider">
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                        <div class="gallery-after">
-                            <div class="gallery-icon-large" style="color: #00d4ff;">📸</div>
-                            <span class="text-muted small">Raqamli nusxa</span>
-                            <span style="font-size:0.75rem; color:#5cb85c;">4K sifat!</span>
-                        </div>
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-music-note-beamed"></i>
                     </div>
-                    <div class="gallery-card-body">
-                        <h5>Ota-bobolar fotosurati (1975)</h5>
-                        <p>50 yillik fotosurat yuqori aniqlikda skanerlandi</p>
-                        <div class="gallery-stats">
-                            <div class="gallery-stat"><i class="bi bi-image"></i> 200+ foto</div>
-                            <div class="gallery-stat"><i class="bi bi-aspect-ratio"></i> 4K</div>
-                            <div class="gallery-stat"><i class="bi bi-palette"></i> Rang+</div>
-                        </div>
-                    </div>
+                    <h5>Audio kassetalar (Magnitofon)</h5>
+                    <p>Eski audio yozuvlar, ovozli xatlar va qo'shiqlarni MP3 formatga o'tkazish hamda shovqindan tozalash.</p>
+                    <span class="service-badge">Audio MP3</span>
                 </div>
             </div>
-            
-            <!-- Card 5: Ko'p kasseta → Hard disk -->
+
+            <!-- Format 5 -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="gallery-card">
-                    <div class="gallery-before-after">
-                        <div class="gallery-before">
-                            <div class="gallery-icon-large" style="color: #ff6b6b;">📦</div>
-                            <span class="text-muted small">10 ta VHS kasseta</span>
-                            <span style="font-size:0.75rem; color:#666;">Qutidagi eski arxiv</span>
-                        </div>
-                        <div class="arrow-divider">
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                        <div class="gallery-after">
-                            <div class="gallery-icon-large" style="color: #00d4ff;">💽</div>
-                            <span class="text-muted small">1 TB Hard Disk</span>
-                            <span style="font-size:0.75rem; color:#5cb85c;">Hammasi bir joyda!</span>
-                        </div>
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-images"></i>
                     </div>
-                    <div class="gallery-card-body">
-                        <h5>Oila video arxivi (1990-2005)</h5>
-                        <p>15 yillik oilaviy arxiv 1 ta hard diskka jamlandi</p>
-                        <div class="gallery-stats">
-                            <div class="gallery-stat"><i class="bi bi-collection"></i> 10 kasseta</div>
-                            <div class="gallery-stat"><i class="bi bi-hdd"></i> 45 GB</div>
-                            <div class="gallery-stat"><i class="bi bi-award"></i> VIP</div>
-                        </div>
-                    </div>
+                    <h5>Fotosuratlar & Plyonkalar</h5>
+                    <p>Eski oilaviy qog'oz fotosuratlar va plyonkalarni professional skaner orqali yuqori aniqlikda raqamlashtirish.</p>
+                    <span class="service-badge">Skaner 4K</span>
                 </div>
             </div>
-            
-            <!-- Card 6: VHS → YouTube -->
+
+            <!-- Format 6 -->
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-                <div class="gallery-card">
-                    <div class="gallery-before-after">
-                        <div class="gallery-before">
-                            <div class="gallery-icon-large" style="color: #ff6b6b;">📼</div>
-                            <span class="text-muted small">VHS kasseta</span>
-                            <span style="font-size:0.75rem; color:#666;">Turmush qurgan kun</span>
-                        </div>
-                        <div class="arrow-divider">
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                        <div class="gallery-after">
-                            <div class="gallery-icon-large" style="color: #ff0000;">▶️</div>
-                            <span class="text-muted small">YouTube</span>
-                            <span style="font-size:0.75rem; color:#5cb85c;">QR-kod bilan!</span>
-                        </div>
+                <div class="service-card h-100">
+                    <div class="service-icon">
+                        <i class="bi bi-shield-check"></i>
                     </div>
-                    <div class="gallery-card-body">
-                        <h5>To'y marosimi (2000)</h5>
-                        <p>PRO tarifda YouTube'ga yuklandi, QR-kod tayyorlandi</p>
-                        <div class="gallery-stats">
-                            <div class="gallery-stat"><i class="bi bi-clock"></i> 3 soat</div>
-                            <div class="gallery-stat"><i class="bi bi-qr-code"></i> QR</div>
-                            <div class="gallery-stat"><i class="bi bi-star-fill"></i> PRO</div>
-                        </div>
-                    </div>
+                    <h5>Zararlangan & Yirtilgan lentalar</h5>
+                    <p>Lenta uzilgan, mog'orlagan yoki yopishib qolgan bo'lsa ham qayta ulab, tozalab qutqarib qolamiz.</p>
+                    <span class="service-badge popular">Qayta tiklash</span>
                 </div>
             </div>
+        </div>
+
+        <!-- Telegram Kanal Namunalar Blok -->
+        <div class="mt-5 p-4 rounded-4 text-center" style="background: linear-gradient(135deg, rgba(0,123,255,0.1), rgba(0,212,255,0.05)); border: 1px solid rgba(0,123,255,0.3);" data-aos="zoom-in">
+            <i class="bi bi-broadcast text-info display-4 mb-3 d-inline-block"></i>
+            <h4 class="text-white mb-2">Jonli video namunalarni kanalimizda ko'ring!</h4>
+            <p class="text-muted mb-4 max-w-600 mx-auto">Telegram kanalimizda har kuni tayyorlangan buyurtmalar, mijozlar taassurotlari va jarayon videolarini joylab boramiz.</p>
+            <a href="https://t.me/uzretrouzchannel" target="_blank" class="btn btn-info btn-lg px-4 me-2">
+                <i class="bi bi-telegram"></i> Telegram kanalimizga o'tish
+            </a>
+            <a href="https://t.me/uzretrouz" target="_blank" class="btn btn-outline-light btn-lg px-4">
+                <i class="bi bi-chat-dots"></i> Adminga yozish
+            </a>
         </div>
     </div>
 </section>
@@ -209,28 +114,28 @@
             <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0">
                 <div class="review-card py-4">
                     <div class="text-primary h1 mb-2"><i class="bi bi-collection-play"></i></div>
-                    <h3 class="text-white stat-num" data-count="5000">5000+</h3>
+                    <h3 class="stat-num" data-count="5000">5000+</h3>
                     <p class="text-muted small mb-0">Qayta tiklangan video</p>
                 </div>
             </div>
             <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
                 <div class="review-card py-4">
                     <div class="text-primary h1 mb-2"><i class="bi bi-people"></i></div>
-                    <h3 class="text-white stat-num" data-count="3200">3200+</h3>
+                    <h3 class="stat-num" data-count="3200">3200+</h3>
                     <p class="text-muted small mb-0">Mamnun mijoz</p>
                 </div>
             </div>
             <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
                 <div class="review-card py-4">
                     <div class="text-primary h1 mb-2"><i class="bi bi-calendar-check"></i></div>
-                    <h3 class="text-white stat-num" data-count="5">5+</h3>
+                    <h3 class="stat-num" data-count="5">5+</h3>
                     <p class="text-muted small mb-0">Yillik tajriba</p>
                 </div>
             </div>
             <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
                 <div class="review-card py-4">
                     <div class="text-primary h1 mb-2"><i class="bi bi-star-fill"></i></div>
-                    <h3 class="text-white stat-num" data-count="100">100%</h3>
+                    <h3 class="stat-num" data-count="100">100%</h3>
                     <p class="text-muted small mb-0">Kafolat</p>
                 </div>
             </div>
@@ -241,8 +146,8 @@
 <!-- CTA -->
 <section class="cta-section py-6">
     <div class="container text-center" data-aos="zoom-in">
-        <h2 class="text-white mb-3">Sizning xotiralaringiz ham bu yerda bo'lsin!</h2>
-        <p class="text-light mb-4">Eski kassetalaringizni bugun topshiring, ertaga tayyor!</p>
+        <h2 class="text-white mb-3">Sizning xotiralaringiz ham abadiy saqlansin!</h2>
+        <p class="text-light mb-4">Eski kassetalaringizni bugun topshiring, 1-2 kunda tayyor bo'ladi!</p>
         <a href="{{ url_for('main.order') }}" class="btn btn-light btn-lg px-5 me-3">
             <i class="bi bi-cart-plus"></i> Buyurtma berish
         </a>

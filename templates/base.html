@@ -30,23 +30,40 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
+    <!-- Theme Initializer (Prevents flicker) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('uzretro-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    
     {% block extra_head %}{% endblock %}
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="{{ url_for('main.index') }}">
             <span class="brand-text">UZRETRO<span class="brand-dot">.UZ</span></span>
         </a>
         
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex align-items-center gap-2 order-lg-3">
+            <!-- Theme Toggle Button (Kunduzgi / Kechki) -->
+            <button class="theme-toggle-btn" id="themeToggleBtn" type="button" title="Rejimni o'zgartirish (Kunduzgi / Kechki)" aria-label="Kunduzgi yoki kechki rejim">
+                <i class="bi bi-sun-fill theme-icon-sun"></i>
+                <i class="bi bi-moon-stars-fill theme-icon-moon"></i>
+                <span class="theme-toggle-text d-none d-sm-inline" id="themeToggleText">Kechki</span>
+            </button>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
         
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+        <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('main.index') }}">
                         <i class="bi bi-house"></i> Bosh sahifa
@@ -72,7 +89,7 @@
                         <i class="bi bi-telephone"></i> Aloqa
                     </a>
                 </li>
-                <li class="nav-item ms-lg-3">
+                <li class="nav-item ms-lg-3 my-2 my-lg-0">
                     <a class="btn btn-primary btn-glow" href="{{ url_for('main.order') }}">
                         <i class="bi bi-cart-plus"></i> Buyurtma berish
                     </a>
