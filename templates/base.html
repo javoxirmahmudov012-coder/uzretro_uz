@@ -6,18 +6,64 @@
     <title>{% block title %}UzRetro.uz — VHS | Fleshka | Hard Disk | Qayta Tiklash{% endblock %}</title>
     
     <!-- SEO Meta Tags for Google -->
-    <meta name="description" content="UzRetro.uz — VHS kasseta, betamax, eski videolaringizni USB fleshka yoki hard diskka professional raqamlashtirish va qayta tiklash xizmati. 100% maxfiylik kafolati.">
-    <meta name="keywords" content="uzretro, vhs kasseta, vhs fleshkaga, video kasseta tozalash, eski videoni qayta tiklash, video montaj, Toshkent kasseta, retro uz">
+    <meta name="description" content="UzRetro.uz — Toshkent va O'zbekiston bo'ylab VHS, MiniDV, Video8 kassetalarni USB fleshka va hard diskka sifatli raqamlashtirish. 100% maxfiylik va sifat kafolati!">
+    <meta name="keywords" content="uzretro, vhs kasseta, vhs fleshkaga, video kasseta tozalash, eski videoni qayta tiklash, video montaj, Toshkent kasseta, retro uz, minidv raqamlashtirish, video8 fleshkaga">
     <meta name="author" content="UzRetro.uz">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="google-site-verification" content="google1453207274e1823c">
     <link rel="canonical" href="https://uzretro.uz{{ request.path }}">
+    
+    <!-- Geo Tags for Tashkent Local Search -->
+    <meta name="geo.region" content="UZ-TK">
+    <meta name="geo.placename" content="Toshkent">
+    <meta name="geo.position" content="41.2825;69.2155">
+    <meta name="ICBM" content="41.2825, 69.2155">
 
     <!-- Open Graph / Facebook / Telegram -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://uzretro.uz/">
+    <meta property="og:url" content="https://uzretro.uz{{ request.path }}">
     <meta property="og:title" content="UzRetro.uz — Eski xotiralaringizni qayta tiklang">
-    <meta property="og:description" content="VHS kassetalarni fleshka va hard diskka ko'chirish. 32K+ mijoz, 100% maxfiylik va sifat kafolati!">
+    <meta property="og:description" content="VHS kassetalarni fleshka va hard diskka ko'chirish. Toshkent va viloyatlar (BTS), 100% maxfiylik va sifat kafolati!">
+    <meta property="og:site_name" content="UzRetro.uz">
+
+    <!-- Schema.org JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "UzRetro.uz",
+      "@id": "https://uzretro.uz/#business",
+      "url": "https://uzretro.uz",
+      "telephone": "+998877700233",
+      "priceRange": "$20 - $100",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Qatortol ko'chasi 60B, Parus binosi",
+        "addressLocality": "Toshkent",
+        "addressRegion": "Chilonzor",
+        "addressCountry": "UZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.2825,
+        "longitude": 69.2155
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "https://t.me/uzretrouz",
+        "https://t.me/uzretrouzchannel",
+        "https://instagram.com/uzretro.uz"
+      ],
+      "description": "Toshkent va butun O'zbekiston bo'ylab VHS, MiniDV, Video8, Hi8 kassetalarini sifatli raqamlashtirish (fleshka, diskka ko'chirish). 100% maxfiylik kafolati."
+    }
+    </script>
     
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
